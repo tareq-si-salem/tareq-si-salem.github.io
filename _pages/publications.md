@@ -25,8 +25,18 @@ Tareq Si Salem<br><i>
   </li>
 </ol>
 
-<h6>Peer-reviewed Conference Papers</h6>
+<h6>Peer-reviewed Papers</h6>
 <ol class="list-group list-group-numbered">
+
+<li class="list-group-item d-flex justify-content-between align-items-start">
+         <div class="ms-2 me-auto">
+     <a class="link-dark" href="https://openreview.net/pdf?id=PGvVf2h2Yb">Adaptive Transductive Inference via Sequential Experimental Design with Contextual Retention</a> <br>
+Tareq Si Salem<br><i>
+            NeurIPS Bayesian Decision-making and Uncertainty, Vancouver, CA, 2024.</i>
+         </div>
+    <span class="badge bg-dark">NeurIPS BDU '24</span>
+  </li>
+  
 <li class="list-group-item d-flex justify-content-between align-items-start">
          <div class="ms-2 me-auto">
      <a class="link-dark" href="https://arxiv.org/abs/2309.04339">Online Submodular Maximization via Online Convex Optimization</a> <br>
