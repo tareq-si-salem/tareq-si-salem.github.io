@@ -113,7 +113,7 @@ redirect_from:
 </ol>
 <h5> News </h5>
 <ul>
-<li> <a href="https://openreview.net/pdf?id=PGvVf2h2Yb">Paper</a> (<a href="/files/pdf/Poster_NeurIPS_2024.pdf">poster</a>) was accepted to <a href="https://gp-seminar-series.github.io/neurips-2024/">NeuriPS BDU</a> 2024.</li> 
+<li> <a href="https://openreview.net/pdf?id=PGvVf2h2Yb">Paper</a> (<a href="/files/pdf/Poster_NeurIPS_2024.pdf">poster</a>) was accepted to <a href="https://gp-seminar-series.github.io/neurips-2024/">NeurIPS BDU</a> 2024.</li> 
  <li> I joined Huawei Paris Research Center</li>
  <li> <a href="https://arxiv.org/abs/2309.04339">Paper</a> (<a href="https://gozde-ozcan.github.io/files/OnlineSubmodularMaximization_AAAI_2024.pdf">poster</a>, <a href="https://github.com/neu-spiral/OSMviaOCO">code</a>, <a href="https://youtu.be/uRnYRcdC5WA">talk recording</a>) was accepted to <a href="https://aaai.org/aaai-conference/">AAAI</a>, Vancouver, CA, 2024.</li> 
  <li> I gave a <a href="https://www.youtube.com/watch?v=b4PoeYqJ3xQ&t=203s">talk</a> at the Indian Institute of Science (<a href="https://cni.iisc.ac.in/seminars/">Networks Seminar Series</a> at CNI)</li>
