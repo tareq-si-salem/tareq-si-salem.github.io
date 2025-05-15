@@ -96,8 +96,8 @@ redirect_from:
 
 <h5> News </h5>
 <ul>
-<li> <a href="https://openreview.net/pdf?id=PGvVf2h2Yb">Paper</a> (<a href="/files/pdf/Poster_NeurIPS_2024.pdf">poster</a>) was accepted to <a href="https://gp-seminar-series.github.io/neurips-2024/">NeurIPS (Bayesian Decision-making) 2024</a>.</li> 
- <li> I joined Huawei Paris Research Center</li>
-
+ <li> <a href="https://arxiv.org/abs/2504.17493">Preprint</a> released on goal-oriented foundation models for time-series forecasting.</li>
+<li> <a href="https://openreview.net/pdf?id=PGvVf2h2Yb">Paper</a> (<a href="/files/pdf/Poster_NeurIPS_2024.pdf">poster</a>) was accepted to <a href="https://gp-seminar-series.github.io/neurips-2024/">NeurIPS (Bayesian Decision-making)</a>.</li> 
+ <li> I joined Huawei Paris Research Center (2024)</li>
 </ul>
 
