@@ -96,7 +96,7 @@ redirect_from:
 
 <h5> News </h5>
 <ul>
- <li> <a href="https://arxiv.org/pdf/2504.17493">Preprint</a> (Lead researcher for this study) and <a href="https://huggingface.co/datasets/netop/Beam-Level-Traffic-Timeseries-Dataset/tree/main">Dataset</a> released on goal-oriented foundation models for time-series forecasting</li>
+ <li> <a href="https://arxiv.org/pdf/2504.17493">Preprint</a> and <a href="https://huggingface.co/datasets/netop/Beam-Level-Traffic-Timeseries-Dataset/tree/main">Dataset</a> released on goal-oriented foundation models for time-series forecasting (Lead researcher for this study)</li>
 <li> <a href="https://openreview.net/pdf?id=PGvVf2h2Yb">Paper</a> (<a href="/files/pdf/Poster_NeurIPS_2024.pdf">poster</a>) was accepted to <a href="https://gp-seminar-series.github.io/neurips-2024/">NeurIPS (Bayesian Decision-making)</a></li> 
  <li> I joined Huawei Paris Research Center (2024)</li>
 </ul>
