@@ -19,6 +19,15 @@ redirect_from:
 
 <h6>Research Snapshots</h6>
 <center>
+ 
+<div class="carousel-item image" data-bs-interval="3000">
+<h5 style="text-align: center; margin-top: 1em;">Fairness in Dynamic Decision Making / Resource Allocation</h5> 
+<img src="https://tareq-si-salem.github.io/files/imgs/15.png" class="d-block w-100" alt="...">
+</div>
+<div class="carousel-item image" data-bs-interval="3000">
+<h5 style="text-align: center; margin-top: 1em;">Fair Multi-agent Cache Networks</h5> 
+<img src="https://tareq-si-salem.github.io/files/imgs/16.png" class="d-block w-100" alt="...">
+</div>
  <div id="carouselExampleInterval" class="carousel carousel-dark slide" data-bs-ride="carousel" style="width:500px; height: 300px;">
 <div class="carousel-inner">
 <div class="carousel-item image" data-bs-interval="3000">
@@ -70,15 +79,6 @@ redirect_from:
 <h5 style="text-align: center; margin-top: 1em;">Similarity Caching: GRADES Policy</h5> 
 <img src="https://tareq-si-salem.github.io/files/imgs/13.png" class="d-block w-100" alt="...">
 </div>
-<div class="carousel-item image" data-bs-interval="3000">
-<h5 style="text-align: center; margin-top: 1em;">Fairness in Dynamic Decision Marking / Resource Allocation</h5> 
-<img src="https://tareq-si-salem.github.io/files/imgs/15.png" class="d-block w-100" alt="...">
-</div>
-<div class="carousel-item image" data-bs-interval="3000">
-<h5 style="text-align: center; margin-top: 1em;">Fair Multi-agent Cache Networks</h5> 
-<img src="https://tareq-si-salem.github.io/files/imgs/16.png" class="d-block w-100" alt="...">
-</div>
- 
 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 <span class="visually-hidden">Previous</span>
