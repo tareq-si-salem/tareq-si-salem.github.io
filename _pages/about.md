@@ -28,6 +28,20 @@ redirect_from:
 <h5 style="text-align: center; margin-top: 1em;">Fair Multi-agent Cache Networks</h5> 
 <img src="https://tareq-si-salem.github.io/files/imgs/16.png" class="d-block w-100" alt="...">
 </div>
+
+<div class="carousel-item image active"  data-bs-interval="3000">
+<h5 style="text-align: center; margin-top: 1em;">Inference Delivery Networks</h5> 
+<img src="https://tareq-si-salem.github.io/files/imgs/14.png" class="d-block w-100" alt="...">
+</div>
+<div class="carousel-item image" data-bs-interval="3000">
+<h5 style="text-align: center; margin-top: 1em;">Similarity Caching</h5> 
+<img src="https://tareq-si-salem.github.io/files/imgs/9.png" class="d-block w-100" alt="...">
+</div>
+<div class="carousel-item image" data-bs-interval="3000">
+<h5 style="text-align: center; margin-top: 1em;">Similarity Caching: Use Cases</h5> 
+<img src="https://tareq-si-salem.github.io/files/imgs/10.png" class="d-block w-100" alt="...">
+</div>
+
  <div id="carouselExampleInterval" class="carousel carousel-dark slide" data-bs-ride="carousel" style="width:500px; height: 300px;">
 <div class="carousel-inner">
 <div class="carousel-item image" data-bs-interval="3000">
@@ -59,18 +73,7 @@ redirect_from:
 <h5 style="text-align: center; margin-top: 1em;">Caching: Coupling Schemes</h5> 
 <img src="https://tareq-si-salem.github.io/files/imgs/7.png" class="d-block w-100" alt="...">
 </div>
-<div class="carousel-item image active"  data-bs-interval="3000">
-<h5 style="text-align: center; margin-top: 1em;">Inference Delivery Networks</h5> 
-<img src="https://tareq-si-salem.github.io/files/imgs/14.png" class="d-block w-100" alt="...">
-</div>
-<div class="carousel-item image" data-bs-interval="3000">
-<h5 style="text-align: center; margin-top: 1em;">Similarity Caching</h5> 
-<img src="https://tareq-si-salem.github.io/files/imgs/9.png" class="d-block w-100" alt="...">
-</div>
-<div class="carousel-item image" data-bs-interval="3000">
-<h5 style="text-align: center; margin-top: 1em;">Similarity Caching: Use Cases</h5> 
-<img src="https://tareq-si-salem.github.io/files/imgs/10.png" class="d-block w-100" alt="...">
-</div>
+
 <div class="carousel-item image" data-bs-interval="3000">
 <h5 style="text-align: center; margin-top: 1em;">Similarity Caching: AÇAI Policy</h5> 
 <img src="https://tareq-si-salem.github.io/files/imgs/12.png" class="d-block w-100" alt="...">
