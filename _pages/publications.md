@@ -29,7 +29,7 @@ Tareq Si Salem<br><i>
 <li class="list-group-item d-flex justify-content-between align-items-start">
          <div class="ms-2 me-auto">
      <a class="link-dark" href="https://arxiv.org/pdf/2504.17493">Goal-Oriented Time-Series Forecasting: Foundation Framework Design</a> <br>
-L. Fechete, M. Sana, F. Ayed, N. Piovesan, W. Li, A. De Domenico, T. Si Salem <br><i>
+L. Fechete, M. Sana, F. Ayed, N. Piovesan, W. Li, A. De Domenico, and T. Si Salem <br><i>
             ArXiv Preprint</i>
          </div>
     <span class="badge bg-dark">arXiv, 2025</span>
@@ -37,12 +37,19 @@ L. Fechete, M. Sana, F. Ayed, N. Piovesan, W. Li, A. De Domenico, T. Si Salem <b
   <li class="list-group-item d-flex justify-content-between align-items-start">
          <div class="ms-2 me-auto">
      <a class="link-dark" href="https://arxiv.org/pdf/2505.11856">Telco-oRAG: Optimizing Retrieval-augmented Generation for Telecom Queries via Hybrid Retrieval and Neural Routing</a> <br>
-A. Bornea, F. Ayed, A. De Domenico, N. Piovesan, T. Si Salem, A. Maatouk<br><i>
+A. Bornea, F. Ayed, A. De Domenico, N. Piovesan, T. Si Salem, and A. Maatouk<br><i>
             ArXiv Preprint</i>
          </div>
     <span class="badge bg-dark">arXiv, 2025</span>
   </li>
-
+<li class="list-group-item d-flex justify-content-between align-items-start">
+         <div class="ms-2 me-auto">
+     <a class="link-dark" href="https://arxiv.org/pdf/2405.04249">Federated Learning for Collaborative Inference Systems: The Case of Early Exit Networks</a> <br>
+C. Kaplan, A. Rodio, T. Si Salem, C. Xu, and G. Neglia <br><i>
+            ArXiv Preprint</i>
+         </div>
+    <span class="badge bg-dark">arXiv, 2025</span>
+  </li>
 </ol>
 <h6>Peer-reviewed Papers</h6>
 <ol class="list-group list-group-numbered">
