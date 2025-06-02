@@ -20,7 +20,9 @@ redirect_from:
 <h6>Research Snapshots</h6>
 <center>
  
-<div class="carousel-item image" data-bs-interval="3000">
+ <div id="carouselExampleInterval" class="carousel carousel-dark slide" data-bs-ride="carousel" style="width:500px; height: 300px;">
+<div class="carousel-inner">
+<div class="carousel-item image active" data-bs-interval="3000">
 <h5 style="text-align: center; margin-top: 1em;">Fairness in Dynamic Decision Making / Resource Allocation</h5> 
 <img src="https://tareq-si-salem.github.io/files/imgs/15.png" class="d-block w-100" alt="...">
 </div>
@@ -29,7 +31,7 @@ redirect_from:
 <img src="https://tareq-si-salem.github.io/files/imgs/16.png" class="d-block w-100" alt="...">
 </div>
 
-<div class="carousel-item image active"  data-bs-interval="3000">
+<div class="carousel-item image"  data-bs-interval="3000">
 <h5 style="text-align: center; margin-top: 1em;">Inference Delivery Networks</h5> 
 <img src="https://tareq-si-salem.github.io/files/imgs/14.png" class="d-block w-100" alt="...">
 </div>
@@ -42,8 +44,6 @@ redirect_from:
 <img src="https://tareq-si-salem.github.io/files/imgs/10.png" class="d-block w-100" alt="...">
 </div>
 
- <div id="carouselExampleInterval" class="carousel carousel-dark slide" data-bs-ride="carousel" style="width:500px; height: 300px;">
-<div class="carousel-inner">
 <div class="carousel-item image" data-bs-interval="3000">
 <h5 style="text-align: center; margin-top: 1em;">Caching: Retrieval Costs</h5>
 <img src="https://tareq-si-salem.github.io/files/imgs/1.png" class="d-block w-100" alt="...">
