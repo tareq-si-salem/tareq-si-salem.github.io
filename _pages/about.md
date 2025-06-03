@@ -17,6 +17,14 @@ redirect_from:
  His research interests lie at the intersection of machine learning, networking, and modeling, with a focus on learning with system constraints (e.g., privacy, safety, fairness, memory, and communication). His work has been published in top academic conferences and journals, including the IEEE/ACM ToN, ACM ToMPECS, ACM SIGMETRICS, ITC, and IEEE INFOCOM. He also received the Best Paper Award at the 33rd International Teletraffic Congress (ITC'33) in 2021. 
  </p>
 
+<h5> News </h5>
+<ul>
+ <li> <a href="https://arxiv.org/pdf/2504.17493">Preprint</a> and <a href="https://huggingface.co/datasets/netop/Beam-Level-Traffic-Timeseries-Dataset/tree/main">Dataset</a> released on goal-oriented foundation models for time-series forecasting (Lead researcher for this study)</li>
+ <li>Supervised student L. Fechete from École Polytechnique (BX25), resulting in an A+ thesis</li>
+ <li> <a href="https://openreview.net/pdf?id=PGvVf2h2Yb">Paper</a> (<a href="/files/pdf/Poster_NeurIPS_2024.pdf">poster</a>) was accepted to <a href="https://gp-seminar-series.github.io/neurips-2024/">NeurIPS (Bayesian Decision-making)</a></li> 
+</ul>
+
+
 <h6>Research Snapshots</h6>
 <center>
  
@@ -109,11 +117,4 @@ redirect_from:
  <br/><br/>
 
 
-<h5> News </h5>
-<ul>
- <li> <a href="https://arxiv.org/pdf/2504.17493">Preprint</a> and <a href="https://huggingface.co/datasets/netop/Beam-Level-Traffic-Timeseries-Dataset/tree/main">Dataset</a> released on goal-oriented foundation models for time-series forecasting (Lead researcher for this study)</li>
- <li>Supervised student L. Fechete from École Polytechnique (BX25), resulting in an A+ thesis</li>
- <li> <a href="https://openreview.net/pdf?id=PGvVf2h2Yb">Paper</a> (<a href="/files/pdf/Poster_NeurIPS_2024.pdf">poster</a>) was accepted to <a href="https://gp-seminar-series.github.io/neurips-2024/">NeurIPS (Bayesian Decision-making)</a></li> 
- <li> I joined Huawei Paris Research Center (2024)</li>
-</ul>
 
