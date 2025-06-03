@@ -23,9 +23,7 @@ redirect_from:
  <li>Supervised student L. Fechete from École Polytechnique (BX25), resulting in an A+ thesis</li>
  <li> <a href="https://openreview.net/pdf?id=PGvVf2h2Yb">Paper</a> (<a href="/files/pdf/Poster_NeurIPS_2024.pdf">poster</a>) was accepted to <a href="https://gp-seminar-series.github.io/neurips-2024/">NeurIPS (Bayesian Decision-making)</a></li> 
 </ul>
-
-
-<h6>Research Snapshots</h6>
+<h5>Research Snapshots</h5>
 <center>
  
  <div id="carouselExampleInterval" class="carousel carousel-dark slide" data-bs-ride="carousel" style="height: 400px;">
