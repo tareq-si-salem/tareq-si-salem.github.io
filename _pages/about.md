@@ -27,6 +27,12 @@ redirect_from:
 <h5 style="text-align: center; margin-top: 1em;">Goal-Oriented Time-Series Forecasting: Foundation Framework Design</h5> 
 <img src="https://tareq-si-salem.github.io/files/imgs/17.png" class="d-block w-100" alt="...">
 </div>
+
+<div class="carousel-item image" data-bs-interval="5000">
+<h5 style="text-align: center; margin-top: 1em;">Online Combinatoraial (Submodular) Maximization</h5> 
+<img src="https://tareq-si-salem.github.io/files/imgs/18.png" class="d-block w-100" alt="...">
+</div>
+
  
 <div class="carousel-item image" data-bs-interval="5000">
 <h5 style="text-align: center; margin-top: 1em;">Fairness in Dynamic Decision Making / Resource Allocation</h5> 
