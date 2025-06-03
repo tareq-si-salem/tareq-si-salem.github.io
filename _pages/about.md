@@ -29,7 +29,7 @@ redirect_from:
 </div>
 
 <div class="carousel-item image" data-bs-interval="5000">
-<h5 style="text-align: center; margin-top: 1em;">Online Combinatoraial (Submodular) Maximization</h5> 
+<h5 style="text-align: center; margin-top: 1em;">Online Combinatorial (Submodular) Maximization</h5> 
 <img src="https://tareq-si-salem.github.io/files/imgs/18.png" class="d-block w-100" alt="...">
 </div>
 
