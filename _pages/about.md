@@ -20,7 +20,7 @@ redirect_from:
 <h6>Research Snapshots</h6>
 <center>
  
- <div id="carouselExampleInterval" class="carousel carousel-dark slide" data-bs-ride="carousel" style="width:500px; height: 300px;">
+ <div id="carouselExampleInterval" class="carousel carousel-dark slide" data-bs-ride="carousel" style="height: 300px;">
 <div class="carousel-inner">
 
 <div class="carousel-item image active" data-bs-interval="5000">
