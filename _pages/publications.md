@@ -21,13 +21,13 @@ author_profile: true
 Tareq Si Salem<br><i>
             Defended at Inria Sophia-Antipolis on October, 17th, 2022.</i>
            <div class="ms-2 me-auto">
-  <p><strong>Supervisor:</strong>Giovanni Neglia, Research Director, Inria Sophia-Antipolis, France</p>
-  <p><strong>Reviewers:</strong></p>
+  <p class="pb-0"><strong>Supervisor:</strong><br>Giovanni Neglia, Research Director, Inria Sophia-Antipolis, France</p>
+  <p class="pb-0"><strong>Reviewers:</strong></p>
   <ul>
     <li>Douglas Leith, Professor, Trinity College Dublin, Ireland</li>
     <li>Leandros Tassiulas, Professor, Yale University, USA</li>
   </ul>
-  <p><strong>Examiners:</strong></p>
+  <p class="pb-0"><strong>Examiners:</strong></p>
   <ul>
     <li>Edmund Yeh, Professor, Northeastern University, USA</li>
     <li>György Dán, Professor, KTH Royal Institute of Technology, Sweden</li>
