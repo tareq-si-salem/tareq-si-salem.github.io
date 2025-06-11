@@ -20,15 +20,13 @@ author_profile: true
       <a class="link-dark" href="https://theses.hal.science/tel-03885484/document">Online Learning for Network Resource Allocation</a> <br>
 Tareq Si Salem<br><i>
             Defended at Inria Sophia-Antipolis on October, 17th, 2022.</i>
-           <div>
-  <p><strong>Supervisor:</strong> Giovanni Neglia, Research Director, Inria Sophia-Antipolis, France</p>
-  
+           <div class="ms-2 me-auto">
+  <p><strong>Supervisor:</strong>Giovanni Neglia, Research Director, Inria Sophia-Antipolis, France</p>
   <p><strong>Reviewers:</strong></p>
   <ul>
     <li>Douglas Leith, Professor, Trinity College Dublin, Ireland</li>
     <li>Leandros Tassiulas, Professor, Yale University, USA</li>
   </ul>
-
   <p><strong>Examiners:</strong></p>
   <ul>
     <li>Edmund Yeh, Professor, Northeastern University, USA</li>
