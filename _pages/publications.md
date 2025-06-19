@@ -13,8 +13,7 @@ author_profile: true
 <aside markdown="1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <h6>Ph.D. Thesis</h6>
-<ol class="list-group list-group-numbered " >
-
+<ol class="list-group list-group-numbered "  style="width: 120%;" >
 <li class="list-group-item d-flex justify-content-between align-items-start">
          <div class="ms-2 me-auto">
       <a class="link-dark" href="https://theses.hal.science/tel-03885484/document">Online Learning for Network Resource Allocation</a> <br>
@@ -39,7 +38,7 @@ Tareq Si Salem<br><i>
   </li>
 </ol>
 <h6>Preprints/Under Review</h6>
-<ol class="list-group list-group-numbered">
+<ol class="list-group list-group-numbered" style="width: 120%;" >
 <li class="list-group-item d-flex justify-content-between align-items-start">
          <div class="ms-2 me-auto">
      <a class="link-dark" href="https://arxiv.org/pdf/2504.17493">Goal-Oriented Time-Series Forecasting: Foundation Framework Design</a> <br>
@@ -66,7 +65,7 @@ C. Kaplan, A. Rodio, T. Si Salem, C. Xu, and G. Neglia <br><i>
   </li>
 </ol>
 <h6>Peer-reviewed Papers</h6>
-<ol class="list-group list-group-numbered">
+<ol class="list-group list-group-numbered" style="width: 120%;" >
 
 <li class="list-group-item d-flex justify-content-between align-items-start">
          <div class="ms-2 me-auto">
@@ -193,7 +192,7 @@ Tareq Si Salem, Giovanni Neglia and Damiano Carra.<br><i>
   </li>
 </ol>    
 
-<!-- <ol class="list-group list-group-numbered">
+<!-- <ol class="list-group list-group-numbered" style="width: 120%;" >
 <li class="list-group-item d-flex justify-content-between align-items-start">
          <div class="ms-2 me-auto">
       <a class="link-dark" href="https://arxiv.org/pdf/2105.02510.pdf">Towards Inference Delivery Networks: Distributing Machine Learning with Optimality Guarantees</a> <br>
