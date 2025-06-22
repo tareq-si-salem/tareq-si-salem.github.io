@@ -140,7 +140,7 @@ IEEE International Conference on Computer Communications (INFOCOM 2021),  2021.<
   </li>   
 </ol>
 <h6>Peer-reviewed Journal Papers</h6>
-<ol class="list-group list-group-numbered " >
+<ol class="list-group list-group-numbered " style="width: 120%;" >
 <li class="list-group-item d-flex justify-content-between align-items-start">
          <div class="ms-2 me-auto">
       <a class="link-dark" href="https://arxiv.org/pdf/2105.02510.pdf">Towards Inference Delivery Networks: Distributing Machine Learning with Optimality Guarantees</a> <br>
