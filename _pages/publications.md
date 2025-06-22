@@ -64,6 +64,62 @@ C. Kaplan, A. Rodio, T. Si Salem, C. Xu, and G. Neglia <br><i>
     <span class="badge bg-dark">arXiv, 2025</span>
   </li>
 </ol>
+
+<h6>Peer-reviewed Journal Papers</h6>
+<ol class="list-group list-group-numbered " style="width: 120%;" >
+<li class="list-group-item d-flex justify-content-between align-items-start">
+         <div class="ms-2 me-auto">
+      <a class="link-dark" href="https://arxiv.org/pdf/2105.02510.pdf">Towards Inference Delivery Networks: Distributing Machine Learning with Optimality Guarantees</a> <br>
+Tareq Si Salem, Gabriele Castellano, Giovanni Neglia, Fabio Pianese, and Andrea Araldo.<br><i>
+IEEE/ACM Transactions on Networking, 2023.  </i>
+         </div>
+ <span class="badge bg-dark">IEEE/ACM ToN '23</span>
+</li>
+<li class="list-group-item d-flex justify-content-between align-items-start">
+         <div class="ms-2 me-auto">
+      <a class="link-dark" href="https://arxiv.org/pdf/2101.12588.pdf">No-Regret Caching via Online Mirror Descent</a> <br>
+Tareq Si Salem‬, and Giovanni Neglia, and Stratis Ioannidis. <br><i>
+            ACM Transactions on Modeling and Performance Evaluation of Computing Systems (ToMPECS), 2023.</i>
+         </div>
+    <span class="badge bg-dark">ACM ToMPECS '23</span>
+  </li>
+<li class="list-group-item d-flex justify-content-between align-items-start">
+         <div class="ms-2 me-auto">
+      <a class="link-dark" href="https://arxiv.org/pdf/2208.05898.pdf">Enabling Long-term Fairness in Dynamic Resource Allocation</a> <br>
+Tareq Si Salem, George Iosifidis‬, and Giovanni Neglia. <br><i>
+            Proceedings of the ACM on Measurement and Analysis of Computing Systems (POMACS), 2022.</i>
+         </div>
+    <span class="badge bg-dark">ACM POMACS '22</span>
+  </li>
+
+<li class="list-group-item d-flex justify-content-between align-items-start">
+<div class="ms-2 me-auto">
+<a class="link-dark" href="https://arxiv.org/pdf/2107.00957.pdf">Ascent Similarity Caching with Approximate Indexes</a> <br>
+Tareq Si Salem, Giovanni Neglia and Damiano Carra.<br><i>
+          IEEE/ACM Transactions on Networking, 2022.  </i>
+         </div>
+<span class="badge bg-dark">IEEE/ACM ToN '22</span>
+  </li>
+    
+<li class="list-group-item d-flex justify-content-between align-items-start">
+         <div class="ms-2 me-auto">
+      <a class="link-dark" href="https://ieeexplore.ieee.org/document/9828494">GRADES: Gradient Descent for Similarity Caching</a> <br>Anirudh Sabnis, Tareq Si Salem, Giovanni Neglia, Michele Garetto, Emilio Leonardi, and Ramesh K. Sitaraman.<br><i>
+          IEEE/ACM Transactions on Networking, 2022.  </i>
+         </div>
+    <span class="badge bg-dark">IEEE/ACM ToN '22</span>
+  </li>
+    
+<li class="list-group-item d-flex justify-content-between align-items-start">
+         <div class="ms-2 me-auto">
+      <a class="link-dark" href="https://ece.northeastern.edu/fac-ece/ioannidis/static/pdf/2022/C_Li_Online_Cache_Sigmetrics_2022.pdf">Online Caching Networks with Adversarial Guarantees</a> <br>Yuanyuan Li, Tareq Si Salem, Giovanni Neglia, and Stratis Ioannidis.<br><i>
+         Proceedings of the ACM on Measurement and Analysis of Computing Systems (POMACS), 2021. </i>
+         </div>
+    <span class="badge bg-dark">ACM POMACS '21</span>
+  </li>
+</ol>    
+
+
+  
 <h6>Peer-reviewed Papers</h6>
 <ol class="list-group list-group-numbered" style="width: 120%;" >
 
@@ -139,58 +195,6 @@ IEEE International Conference on Computer Communications (INFOCOM 2021),  2021.<
     <span class="badge bg-dark">IEEE INFOCOM '21</span>
   </li>   
 </ol>
-<h6>Peer-reviewed Journal Papers</h6>
-<ol class="list-group list-group-numbered " style="width: 120%;" >
-<li class="list-group-item d-flex justify-content-between align-items-start">
-         <div class="ms-2 me-auto">
-      <a class="link-dark" href="https://arxiv.org/pdf/2105.02510.pdf">Towards Inference Delivery Networks: Distributing Machine Learning with Optimality Guarantees</a> <br>
-Tareq Si Salem, Gabriele Castellano, Giovanni Neglia, Fabio Pianese, and Andrea Araldo.<br><i>
-IEEE/ACM Transactions on Networking, 2023.  </i>
-         </div>
- <span class="badge bg-dark">IEEE/ACM ToN '23</span>
-</li>
-<li class="list-group-item d-flex justify-content-between align-items-start">
-         <div class="ms-2 me-auto">
-      <a class="link-dark" href="https://arxiv.org/pdf/2101.12588.pdf">No-Regret Caching via Online Mirror Descent</a> <br>
-Tareq Si Salem‬, and Giovanni Neglia, and Stratis Ioannidis. <br><i>
-            ACM Transactions on Modeling and Performance Evaluation of Computing Systems (ToMPECS), 2023.</i>
-         </div>
-    <span class="badge bg-dark">ACM ToMPECS '23</span>
-  </li>
-<li class="list-group-item d-flex justify-content-between align-items-start">
-         <div class="ms-2 me-auto">
-      <a class="link-dark" href="https://arxiv.org/pdf/2208.05898.pdf">Enabling Long-term Fairness in Dynamic Resource Allocation</a> <br>
-Tareq Si Salem, George Iosifidis‬, and Giovanni Neglia. <br><i>
-            Proceedings of the ACM on Measurement and Analysis of Computing Systems (POMACS), 2022.</i>
-         </div>
-    <span class="badge bg-dark">ACM POMACS '22</span>
-  </li>
-
-<li class="list-group-item d-flex justify-content-between align-items-start">
-<div class="ms-2 me-auto">
-<a class="link-dark" href="https://arxiv.org/pdf/2107.00957.pdf">Ascent Similarity Caching with Approximate Indexes</a> <br>
-Tareq Si Salem, Giovanni Neglia and Damiano Carra.<br><i>
-          IEEE/ACM Transactions on Networking, 2022.  </i>
-         </div>
-<span class="badge bg-dark">IEEE/ACM ToN '22</span>
-  </li>
-    
-<li class="list-group-item d-flex justify-content-between align-items-start">
-         <div class="ms-2 me-auto">
-      <a class="link-dark" href="https://ieeexplore.ieee.org/document/9828494">GRADES: Gradient Descent for Similarity Caching</a> <br>Anirudh Sabnis, Tareq Si Salem, Giovanni Neglia, Michele Garetto, Emilio Leonardi, and Ramesh K. Sitaraman.<br><i>
-          IEEE/ACM Transactions on Networking, 2022.  </i>
-         </div>
-    <span class="badge bg-dark">IEEE/ACM ToN '22</span>
-  </li>
-    
-<li class="list-group-item d-flex justify-content-between align-items-start">
-         <div class="ms-2 me-auto">
-      <a class="link-dark" href="https://ece.northeastern.edu/fac-ece/ioannidis/static/pdf/2022/C_Li_Online_Cache_Sigmetrics_2022.pdf">Online Caching Networks with Adversarial Guarantees</a> <br>Yuanyuan Li, Tareq Si Salem, Giovanni Neglia, and Stratis Ioannidis.<br><i>
-         Proceedings of the ACM on Measurement and Analysis of Computing Systems (POMACS), 2021. </i>
-         </div>
-    <span class="badge bg-dark">ACM POMACS '21</span>
-  </li>
-</ol>    
 
 <!-- <ol class="list-group list-group-numbered" style="width: 120%;" >
 <li class="list-group-item d-flex justify-content-between align-items-start">
