@@ -19,7 +19,7 @@ redirect_from:
 
 <h5> News </h5>
 <ul>
- <li> <a href="https://arxiv.org/pdf/2504.17493">Preprint</a>, <a href="https://github.com/netop-team/gotsf">Code</a>, and  <a href="https://huggingface.co/datasets/netop/Beam-Level-Traffic-Timeseries-Dataset">Dataset</a> released on goal-oriented foundation models for time-series forecasting (Lead researcher for this study)</li>
+ <li> <a href="https://arxiv.org/pdf/2504.17493">Preprint</a>, <a href="https://github.com/netop-team/gotsf">Code</a>, and  <a href="https://huggingface.co/datasets/netop/Beam-Level-Traffic-Timeseries-Dataset">Dataset</a> released on goal-oriented foundation models for time-series forecasting (Lead researcher for this study). Paper (short version) accepted to <a href="https://berts-workshop.github.io/">NeurIPS 2025</a>  Recent Advances in Time Series Foundation Models</li>
  <li>Supervised L. Fechete from École Polytechnique (BX25), resulting in an A+ thesis</li>
  <li> <a href="https://openreview.net/pdf?id=PGvVf2h2Yb">Paper</a> (<a href="/files/pdf/Poster_NeurIPS_2024.pdf">poster</a>) was accepted to <a href="https://gp-seminar-series.github.io/neurips-2024/">NeurIPS (Bayesian Decision-making)</a></li> 
 </ul>
