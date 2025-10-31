@@ -318,3 +318,36 @@ footer {
     box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
   }
 }
+
+.badges {
+  margin-top: 0.5rem;
+}
+
+.badges img {
+  height: 20px;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.badges img:hover {
+  opacity: 1;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 0.6rem;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.download-btn:hover {
+  background: var(--accent);
+}
+
