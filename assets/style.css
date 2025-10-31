@@ -17,9 +17,11 @@
   --bg: #fafafa;
   --surface: #ffffff;
   --border: #ddd;
+  --link: #2f5d8a;
+  --link-hover: #1e3f63;
 }
 
-/* Dark mode (auto via system setting) */
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --primary: #8ab4f8;
@@ -29,6 +31,8 @@
     --bg: #121212;
     --surface: #1e1e1e;
     --border: #333;
+    --link: #8ab4f8;
+    --link-hover: #a7c7ff;
   }
 }
 
@@ -44,7 +48,20 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Utility text classes */
+/* Subtle, unified link style */
+a {
+  color: var(--link);
+  text-decoration: none;
+  transition: color 0.25s ease, text-decoration-color 0.25s ease;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
 .highlight {
   color: var(--accent);
   font-weight: 500;
@@ -85,7 +102,7 @@ header {
 }
 
 .nav-logo:hover {
-  color: var(--accent);
+  color: var(--link-hover);
 }
 
 .nav-links {
@@ -97,17 +114,25 @@ header {
 }
 
 .nav-links a {
-  text-decoration: none;
   color: var(--text);
   font-weight: 500;
-  padding-bottom: 2px;
-  transition: color 0.2s ease, border-bottom 0.2s ease;
+  position: relative;
 }
 
-.nav-links a:hover,
-.nav-links .active {
-  color: var(--primary);
-  border-bottom: 2px solid var(--primary);
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: var(--link-hover);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links .active::after {
+  width: 100%;
 }
 
 /* ---------------------------------------------------------
@@ -152,14 +177,13 @@ header {
 }
 
 .links a {
-  color: var(--accent);
-  text-decoration: none;
   font-weight: 500;
+  opacity: 0.9;
   margin: 0 0.3rem;
 }
 
 .links a:hover {
-  text-decoration: underline;
+  opacity: 1;
 }
 
 /* ---------------------------------------------------------
@@ -179,6 +203,18 @@ header {
   margin-bottom: 1rem;
 }
 
+.content h3 {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.3rem;
+  margin-top: 2.5rem;
+}
+
+.content h3::before {
+  content: "• ";
+  color: var(--accent);
+  font-weight: 700;
+}
+
 ul {
   padding-left: 1.2rem;
 }
@@ -187,7 +223,6 @@ li {
   margin-bottom: 0.8rem;
 }
 
-/* Compact list utility */
 .compact-list {
   margin: 0.2rem 0;
   padding-left: 1.2rem;
@@ -195,6 +230,100 @@ li {
 
 .compact-list li {
   margin: 0.1rem 0;
+}
+
+/* ---------------------------------------------------------
+   PUBLICATION CARDS
+--------------------------------------------------------- */
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.pub-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
+}
+
+.pub-card:hover {
+  background: rgba(0, 119, 182, 0.06);
+  border-left-color: var(--primary);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.pub-card h4 {
+  margin: 0 0 0.4rem 0;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.pub-card p {
+  margin: 0.3rem 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.pub-card ul {
+  margin: 0.4rem 0;
+}
+
+.pub-card ul li {
+  margin: 0.2rem 0;
+}
+
+.pub-card .tag {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* Badges & buttons */
+.badges {
+  margin-top: 0.5rem;
+}
+
+.badges img {
+  height: 20px;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.badges img:hover {
+  opacity: 1;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 0.6rem;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.download-btn:hover {
+  background: var(--accent);
+}
+
+/* Dark mode adjustment */
+@media (prefers-color-scheme: dark) {
+  .pub-card {
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+  }
 }
 
 /* ---------------------------------------------------------
@@ -236,118 +365,8 @@ footer {
   }
 }
 
-/* ---------------------------------------------------------
-   PUBLICATION CARDS — FULL WIDTH (VERTICAL STACK)
---------------------------------------------------------- */
-
-.pub-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  margin-top: 1.5rem;
-}
-
-.pub-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.4rem 1.6rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  width: 100%;
-}
-
-.pub-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-  border-color: var(--accent);
-}
-
-.pub-card h4 {
-  margin-top: 0;
-  margin-bottom: 0.4rem;
-  color: var(--primary);
-  font-size: 1.1rem;
-}
-
-.pub-card p {
-  margin: 0.3rem 0;
-  color: var(--text);
-  line-height: 1.6;
-}
-
-.pub-card .tag {
-  margin-top: 0.6rem;
-  font-size: 0.85rem;
-  color: var(--accent);
-  font-weight: 500;
-}
-
-.pub-card ul {
-  margin: 0.4rem 0;
-}
-
-.pub-card ul li {
-  margin: 0.2rem 0;
-}
-
-/* Section headings separators */
-.content h3 {
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.3rem;
-  margin-top: 2.5rem;
-}
-
-/* Optional decorative dot before section titles */
-.content h3::before {
-  content: "• ";
-  color: var(--accent);
-  font-weight: 700;
-}
-
-/* Wide layout adjustments */
 @media (min-width: 900px) {
   .content {
     max-width: 850px;
   }
 }
-
-/* Dark mode card shadow */
-@media (prefers-color-scheme: dark) {
-  .pub-card {
-    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
-  }
-}
-
-.badges {
-  margin-top: 0.5rem;
-}
-
-.badges img {
-  height: 20px;
-  margin-right: 0.4rem;
-  vertical-align: middle;
-  opacity: 0.9;
-  transition: opacity 0.2s ease;
-}
-
-.badges img:hover {
-  opacity: 1;
-}
-
-.download-btn {
-  display: inline-block;
-  margin-top: 0.6rem;
-  background: var(--primary);
-  color: #fff;
-  font-size: 0.85rem;
-  padding: 0.3rem 0.8rem;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.2s ease;
-}
-
-.download-btn:hover {
-  background: var(--accent);
-}
-
