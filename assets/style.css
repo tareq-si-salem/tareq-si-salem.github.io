@@ -1,93 +1,238 @@
+/* =========================================================
+   GLOBAL BASE STYLES
+   Author: Tareq Si Salem
+   Description: Clean, modern, dark-mode adaptive global CSS
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* ---------------------------------------------------------
+   COLOR SYSTEM
+--------------------------------------------------------- */
+:root {
+  --primary: #2f5d8a;
+  --accent: #0077b6;
+  --text: #333;
+  --muted: #555;
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --border: #ddd;
+}
+
+/* Dark mode (auto via system setting) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #8ab4f8;
+    --accent: #66c2ff;
+    --text: #eaeaea;
+    --muted: #bbb;
+    --bg: #121212;
+    --surface: #1e1e1e;
+    --border: #333;
+  }
+}
+
+/* ---------------------------------------------------------
+   BASE TYPOGRAPHY & BODY
+--------------------------------------------------------- */
 body {
-  font-family: 'Inter', sans-serif;
   margin: 0;
-  color: #333;
-  line-height: 1.6;
-  background: #fafafa;
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+  scroll-behavior: smooth;
+}
+
+/* Utility text classes */
+.highlight {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.italic {
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* ---------------------------------------------------------
+   NAVIGATION
+--------------------------------------------------------- */
+header {
+  background: var(--surface);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #ffffff;
+  max-width: 1100px;
+  margin: 0 auto;
   padding: 1rem 2rem;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+}
+
+.nav-logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+.nav-logo:hover {
+  color: var(--accent);
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
+  list-style: none;
   gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
+  color: var(--text);
   font-weight: 500;
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
 }
 
-.nav-links a.active, .nav-links a:hover {
-  color: #0077cc;
+.nav-links a:hover,
+.nav-links .active {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
 }
 
+/* ---------------------------------------------------------
+   HERO SECTION
+--------------------------------------------------------- */
 .hero {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 3rem 2rem;
-  background: #eef4ff;
+  text-align: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .profile-img {
   width: 180px;
+  height: 180px;
   border-radius: 50%;
-  margin-right: 2rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
 }
 
 .intro h1 {
-  margin-bottom: 0.2rem;
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  color: var(--primary);
+}
+
+.intro h2 {
+  font-weight: 500;
+  margin: 0.3rem 0;
+  color: var(--muted);
 }
 
 .links a {
-  color: #0077cc;
+  color: var(--accent);
   text-decoration: none;
+  font-weight: 500;
+  margin: 0 0.3rem;
 }
 
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------------------------------------------
+   MAIN CONTENT
+--------------------------------------------------------- */
 .content {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  animation: fadeInUp 0.8s ease-out;
 }
 
-footer {
-  text-align: center;
-  padding: 2rem;
-  background: #f5f5f5;
-  font-size: 0.9em;
+.content h2,
+.content h3 {
+  color: var(--primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
+ul {
+  padding-left: 1.2rem;
+}
+
+li {
+  margin-bottom: 0.8rem;
+}
+
+/* Compact list utility */
 .compact-list {
   margin-top: 0.2rem;
   margin-bottom: 0.2rem;
   padding-left: 1.2rem;
 }
+
 .compact-list li {
   margin: 0.1rem 0;
 }
-.nav-logo {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #222;
-  text-decoration: none;
-  transition: color 0.2s ease;
+
+/* ---------------------------------------------------------
+   FOOTER
+--------------------------------------------------------- */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  margin-top: 4rem;
 }
 
-.nav-logo:hover {
-  color: #0077cc;
+/* ---------------------------------------------------------
+   ANIMATIONS
+--------------------------------------------------------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE DESIGN
+--------------------------------------------------------- */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    display: none;
+  }
 }
