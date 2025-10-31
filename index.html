@@ -11,6 +11,12 @@
   <header>
     <nav class="navbar">
       <a href="index.html" class="nav-logo">Tareq Si Salem</a>
+
+      <!-- 🌙 Dark mode toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        🌙
+      </button>
+
       <ul class="nav-links">
         <li><a href="index.html" class="active">About</a></li>
         <li><a href="publications.html">Publications</a></li>
@@ -22,6 +28,7 @@
     </nav>
   </header>
 
+  <!-- === Hero === -->
   <section class="hero">
     <img src="images/profile.png" alt="Tareq Si Salem" class="profile-img" />
     <div class="intro">
@@ -81,33 +88,78 @@
       </li>
     </ul>
 
-    <h3>Selected Publications</h3>
-    <ul>
-      <li>
-        <span class="highlight">Online Submodular Maximization via Online Convex Optimization.</span><br />
-        Tareq Si Salem, Gözde Özcan, Iasonas Nikolaou, Evimaria Terzi, Stratis Ioannidis.<br />
-        <span class="italic">AAAI (A*, 23% AR)</span>, Vancouver, Canada, 2024.
-      </li>
-      <li>
-        <span class="highlight">Enabling Long-term Fairness in Dynamic Resource Allocation.</span><br />
-        Tareq Si Salem, George Iosifidis, and Giovanni Neglia.<br />
-        <span class="italic">ACM SIGMETRICS (A*, 15% AR)</span>, Orlando, Florida, 2023.
-      </li>
-      <li>
-        <span class="highlight">Ascent Similarity Caching with Approximate Indexes.</span><br />
-        Tareq Si Salem, Giovanni Neglia, and Damiano Carra.<br />
-        <span class="italic">IEEE/ACM Transactions on Networking (Best Paper at ITC 33)</span>, 2022.
-      </li>
-      <li>
-        <span class="highlight">GRADES: Gradient Descent for Similarity Caching.</span><br />
-        Anirudh Sabnis, Tareq Si Salem, Giovanni Neglia, Michele Garetto, Emilio Leonardi, and Ramesh K. Sitaraman.<br />
-        <span class="italic">IEEE INFOCOM (A*, 19% AR)</span>, 2021.
-      </li>
-    </ul>
+ <h3>Selected Publications</h3>
+
+<h3>Selected Publications</h3>
+
+<div class="pub-list">
+
+  <a class="pub-card" 
+     href="https://arxiv.org/pdf/2309.04339" 
+     target="_blank" 
+     rel="noopener noreferrer">
+    <h4>Online Submodular Maximization via Online Convex Optimization</h4>
+    <p><strong>Authors:</strong> Tareq Si Salem, Gözde Özcan, Iasonas Nikolaou, Evimaria Terzi, Stratis Ioannidis</p>
+    <p class="italic">AAAI (A*, 23% AR), Vancouver, Canada, 2024</p>
+  </a>
+
+  <a class="pub-card" 
+     href="https://arxiv.org/pdf/2208.05898" 
+     target="_blank" 
+     rel="noopener noreferrer">
+    <h4>Enabling Long-term Fairness in Dynamic Resource Allocation</h4>
+    <p><strong>Authors:</strong> Tareq Si Salem, George Iosifidis, Giovanni Neglia</p>
+    <p class="italic">ACM SIGMETRICS (A*, 15% AR), Orlando, Florida, USA, 2023</p>
+  </a>
+  <a class="pub-card" 
+     href="https://arxiv.org/pdf/2107.00957" 
+     target="_blank" 
+     rel="noopener noreferrer">
+    <h4>Ascent Similarity Caching with Approximate Indexes</h4>
+    <p><strong>Authors:</strong> Tareq Si Salem, Giovanni Neglia, Damiano Carra</p>
+    <p class="italic">IEEE/ACM Transactions on Networking (Best Paper ITC'33), 2022</p>
+  </a>
+  
+  <a class="pub-card" 
+     href="https://groups.cs.umass.edu/ramesh/wp-content/uploads/sites/3/2023/08/TNET.2022.3187044.pdf" 
+     target="_blank" 
+     rel="noopener noreferrer">
+    <h4>GRADES: Gradient Descent for Similarity Caching</h4>
+    <p><strong>Authors:</strong> Anirudh Sabnis, Tareq Si Salem, Giovanni Neglia, Michele Garetto, Emilio Leonardi, Ramesh K. Sitaraman</p>
+    <p class="italic">IEEE INFOCOM (A*, 19% AR), 2021</p>
+  </a>
+
+
+
+</div>
+
+
+
   </section>
 
   <footer>
     <p>© 2025 Tareq Si Salem.</p>
   </footer>
+
+  <!-- === Dark mode toggle script === -->
+  <script>
+    const toggle = document.getElementById("theme-toggle");
+    const storedTheme = localStorage.getItem("theme");
+
+    if (storedTheme) {
+      document.documentElement.setAttribute("data-theme", storedTheme);
+      toggle.textContent = storedTheme === "dark" ? "☀️" : "🌙";
+    }
+
+    toggle.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+      toggle.textContent = next === "dark" ? "☀️" : "🌙";
+    });
+  </script>
 </body>
 </html>
+
+

@@ -1,13 +1,12 @@
 /* =========================================================
-   GLOBAL BASE STYLES
-   Author: Tareq Si Salem
-   Description: Clean, modern, dark-mode adaptive global CSS
+   GLOBAL STYLES — Tareq Si Salem, Ph.D.
+   Clean, modern, dark-mode adaptive global CSS
 ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 /* ---------------------------------------------------------
-   COLOR SYSTEM
+   COLOR SYSTEM (Light / Dark via data-theme or system)
 --------------------------------------------------------- */
 :root {
   --primary: #2f5d8a;
@@ -17,13 +16,24 @@
   --bg: #fafafa;
   --surface: #ffffff;
   --border: #ddd;
-  --link: #2f5d8a;
-  --link-hover: #1e3f63;
+  --shadow: rgba(0, 0, 0, 0.08);
 }
 
-/* Dark mode */
+/* Manual dark-mode override */
+:root[data-theme='dark'] {
+  --primary: #8ab4f8;
+  --accent: #66c2ff;
+  --text: #eaeaea;
+  --muted: #bbb;
+  --bg: #121212;
+  --surface: #1e1e1e;
+  --border: #333;
+  --shadow: rgba(255, 255, 255, 0.05);
+}
+
+/* Auto dark mode (fallback if no manual preference) */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme='light']) {
     --primary: #8ab4f8;
     --accent: #66c2ff;
     --text: #eaeaea;
@@ -31,8 +41,7 @@
     --bg: #121212;
     --surface: #1e1e1e;
     --border: #333;
-    --link: #8ab4f8;
-    --link-hover: #a7c7ff;
+    --shadow: rgba(255, 255, 255, 0.05);
   }
 }
 
@@ -46,22 +55,25 @@ body {
   background: var(--bg);
   line-height: 1.7;
   scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Subtle, unified link style */
+h1, h2, h3, h4 {
+  color: var(--primary);
+  line-height: 1.3;
+}
+
 a {
-  color: var(--link);
+  color: var(--accent);
   text-decoration: none;
-  transition: color 0.25s ease, text-decoration-color 0.25s ease;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  transition: color 0.2s ease;
 }
 
 a:hover {
-  color: var(--link-hover);
   text-decoration: underline;
 }
 
+/* Utility text classes */
 .highlight {
   color: var(--accent);
   font-weight: 500;
@@ -80,7 +92,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 8px var(--shadow);
+  transition: background 0.3s ease;
 }
 
 .navbar {
@@ -90,6 +103,7 @@ header {
   max-width: 1100px;
   margin: 0 auto;
   padding: 1rem 2rem;
+  gap: 1rem;
 }
 
 .nav-logo {
@@ -102,7 +116,7 @@ header {
 }
 
 .nav-logo:hover {
-  color: var(--link-hover);
+  color: var(--accent);
 }
 
 .nav-links {
@@ -114,25 +128,32 @@ header {
 }
 
 .nav-links a {
+  text-decoration: none;
   color: var(--text);
   font-weight: 500;
-  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
 }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0%;
-  height: 1px;
-  background: var(--link-hover);
-  transition: width 0.3s ease;
+.nav-links a:hover,
+.nav-links .active {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
 }
 
-.nav-links a:hover::after,
-.nav-links .active::after {
-  width: 100%;
+/* Dark-mode toggle button */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--text);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  transform: scale(1.15);
 }
 
 /* ---------------------------------------------------------
@@ -156,7 +177,7 @@ header {
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px var(--shadow);
   transition: transform 0.3s ease;
 }
 
@@ -167,7 +188,6 @@ header {
 .intro h1 {
   font-size: 2rem;
   margin: 0.5rem 0;
-  color: var(--primary);
 }
 
 .intro h2 {
@@ -177,13 +197,14 @@ header {
 }
 
 .links a {
+  color: var(--accent);
+  text-decoration: none;
   font-weight: 500;
-  opacity: 0.9;
   margin: 0 0.3rem;
 }
 
 .links a:hover {
-  opacity: 1;
+  text-decoration: underline;
 }
 
 /* ---------------------------------------------------------
@@ -201,18 +222,6 @@ header {
   color: var(--primary);
   margin-top: 2rem;
   margin-bottom: 1rem;
-}
-
-.content h3 {
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.3rem;
-  margin-top: 2.5rem;
-}
-
-.content h3::before {
-  content: "• ";
-  color: var(--accent);
-  font-weight: 700;
 }
 
 ul {
@@ -235,48 +244,38 @@ li {
 /* ---------------------------------------------------------
    PUBLICATION CARDS
 --------------------------------------------------------- */
-.pub-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+.pub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
   margin-top: 1.5rem;
 }
 
 .pub-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 1.2rem 1.4rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-  width: 100%;
+  box-shadow: 0 2px 6px var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .pub-card:hover {
-  background: rgba(0, 119, 182, 0.06);
-  border-left-color: var(--primary);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 14px var(--shadow);
+  border-color: var(--accent);
 }
 
 .pub-card h4 {
-  margin: 0 0 0.4rem 0;
+  margin-top: 0;
+  margin-bottom: 0.4rem;
   color: var(--primary);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 .pub-card p {
   margin: 0.3rem 0;
   color: var(--text);
-  line-height: 1.6;
-}
-
-.pub-card ul {
-  margin: 0.4rem 0;
-}
-
-.pub-card ul li {
-  margin: 0.2rem 0;
 }
 
 .pub-card .tag {
@@ -286,44 +285,8 @@ li {
   font-weight: 500;
 }
 
-/* Badges & buttons */
-.badges {
-  margin-top: 0.5rem;
-}
-
-.badges img {
-  height: 20px;
-  margin-right: 0.4rem;
-  vertical-align: middle;
-  opacity: 0.9;
-  transition: opacity 0.2s ease;
-}
-
-.badges img:hover {
-  opacity: 1;
-}
-
-.download-btn {
-  display: inline-block;
-  margin-top: 0.6rem;
-  background: var(--primary);
-  color: #fff;
-  font-size: 0.85rem;
-  padding: 0.3rem 0.8rem;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.2s ease;
-}
-
-.download-btn:hover {
-  background: var(--accent);
-}
-
-/* Dark mode adjustment */
-@media (prefers-color-scheme: dark) {
-  .pub-card {
-    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
-  }
+:root[data-theme='dark'] .pub-card {
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
 }
 
 /* ---------------------------------------------------------
@@ -364,9 +327,59 @@ footer {
     display: none;
   }
 }
+/* ---------------------------------------------------------
+   VERTICAL PUBLICATION LIST (Clickable Cards)
+--------------------------------------------------------- */
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
 
-@media (min-width: 900px) {
-  .content {
-    max-width: 850px;
-  }
+.pub-card {
+  display: block;
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 2px 6px var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.pub-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px var(--shadow);
+  background: var(--bg);
+}
+
+.pub-card h4 {
+  margin: 0 0 0.4rem;
+  color: var(--primary);
+  font-size: 1.05rem;
+  transition: color 0.25s ease;
+}
+
+.pub-card:hover h4 {
+  color: var(--accent);
+}
+
+.pub-card p {
+  margin: 0.3rem 0;
+  color: var(--text);
+}
+
+.pub-card .italic {
+  font-style: italic;
+  color: var(--muted);
+}
+
+:root[data-theme='dark'] .pub-card {
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+}
+
+:root[data-theme='dark'] .pub-card:hover {
+  background: #181818;
 }

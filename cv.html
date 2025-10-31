@@ -56,5 +56,31 @@
   <footer>
     <p>© 2025 Tareq Si Salem. </p>
   </footer>
+  <script>
+  const toggle = document.getElementById("theme-toggle");
+  const root = document.documentElement;
+
+  // Load saved theme if it exists
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    root.setAttribute("data-theme", savedTheme);
+    toggle.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+  } else {
+    // fallback to system preference
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    root.setAttribute("data-theme", prefersDark ? "dark" : "light");
+    toggle.textContent = prefersDark ? "☀️" : "🌙";
+  }
+
+  // Toggle on click
+  toggle.addEventListener("click", () => {
+    const current = root.getAttribute("data-theme");
+    const next = current === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+    toggle.textContent = next === "dark" ? "☀️" : "🌙";
+  });
+</script>
+
 </body>
 </html>

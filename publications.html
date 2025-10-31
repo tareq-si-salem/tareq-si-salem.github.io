@@ -8,19 +8,26 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar">
-      <a href="index.html" class="nav-logo">Tareq Si Salem</a>
-      <ul class="nav-links">
-        <li><a href="index.html">About</a></li>
-        <li><a href="publications.html" class="active">Publications</a></li>
-        <li><a href="talks.html">Talks</a></li>
-        <li><a href="teaching.html">Teaching</a></li>
-        <li><a href="software.html">Software</a></li>
-        <li><a href="cv.html">CV</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">Tareq Si Salem</a>
+
+    <!-- 🌙 Dark mode toggle -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+      🌙
+    </button>
+
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="talks.html">Talks</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="software.html">Software</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
+</header>
+
 
   <section class="content">
     <h2>📚 Publications — Tareq Si Salem</h2>
@@ -183,5 +190,31 @@
   <footer>
     <p>© 2025 Tareq Si Salem.</p>
   </footer>
+  <script>
+  const toggle = document.getElementById("theme-toggle");
+  const root = document.documentElement;
+
+  // Load saved theme if it exists
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    root.setAttribute("data-theme", savedTheme);
+    toggle.textContent = savedTheme === "dark" ? "☀️" : "🌙";
+  } else {
+    // fallback to system preference
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    root.setAttribute("data-theme", prefersDark ? "dark" : "light");
+    toggle.textContent = prefersDark ? "☀️" : "🌙";
+  }
+
+  // Toggle on click
+  toggle.addEventListener("click", () => {
+    const current = root.getAttribute("data-theme");
+    const next = current === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+    toggle.textContent = next === "dark" ? "☀️" : "🌙";
+  });
+</script>
+
 </body>
 </html>
