@@ -16,9 +16,11 @@
     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
       🌙
     </button>
-
-    <ul class="nav-links">
-      <li><a href="index.html">About</a></li>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+    ☰
+  </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">About</a></li>
       <li><a href="publications.html">Publications</a></li>
       <li><a href="talks.html">Talks</a></li>
       <li><a href="teaching.html">Teaching</a></li>
@@ -191,28 +193,41 @@
     <p>© 2025 Tareq Si Salem.</p>
   </footer>
   <script>
-  const toggle = document.getElementById("theme-toggle");
-  const root = document.documentElement;
+  document.addEventListener("DOMContentLoaded", () => {
+    // === 🌙 Dark mode toggle ===
+    const toggle = document.getElementById("theme-toggle");
+    const storedTheme = localStorage.getItem("theme");
 
-  // Load saved theme if it exists
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme) {
-    root.setAttribute("data-theme", savedTheme);
-    toggle.textContent = savedTheme === "dark" ? "☀️" : "🌙";
-  } else {
-    // fallback to system preference
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    root.setAttribute("data-theme", prefersDark ? "dark" : "light");
-    toggle.textContent = prefersDark ? "☀️" : "🌙";
-  }
+    if (storedTheme) {
+      document.documentElement.setAttribute("data-theme", storedTheme);
+      toggle.textContent = storedTheme === "dark" ? "☀️" : "🌙";
+    }
 
-  // Toggle on click
-  toggle.addEventListener("click", () => {
-    const current = root.getAttribute("data-theme");
-    const next = current === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-    toggle.textContent = next === "dark" ? "☀️" : "🌙";
+    toggle.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+      toggle.textContent = next === "dark" ? "☀️" : "🌙";
+    });
+
+    // === 🍔 Hamburger menu toggle ===
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle("active");
+      });
+
+      // Optional: close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!navLinks.contains(e.target) && e.target !== menuToggle) {
+          navLinks.classList.remove("active");
+        }
+      });
+    }
   });
 </script>
 

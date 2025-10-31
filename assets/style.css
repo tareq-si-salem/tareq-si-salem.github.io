@@ -31,7 +31,7 @@
   --shadow: rgba(255, 255, 255, 0.05);
 }
 
-/* Auto dark mode (fallback if no manual preference) */
+/* Auto dark mode fallback */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     --primary: #8ab4f8;
@@ -85,7 +85,7 @@ a:hover {
 }
 
 /* ---------------------------------------------------------
-   NAVIGATION
+   NAVIGATION BAR
 --------------------------------------------------------- */
 header {
   background: var(--surface);
@@ -98,11 +98,12 @@ header {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   max-width: 1100px;
   margin: 0 auto;
   padding: 1rem 2rem;
+  position: relative;
   gap: 1rem;
 }
 
@@ -119,6 +120,7 @@ header {
   color: var(--accent);
 }
 
+/* Nav links */
 .nav-links {
   display: flex;
   list-style: none;
@@ -141,7 +143,7 @@ header {
   border-bottom: 2px solid var(--primary);
 }
 
-/* Dark-mode toggle button */
+/* Dark mode toggle button */
 .theme-toggle {
   background: none;
   border: none;
@@ -154,6 +156,17 @@ header {
 .theme-toggle:hover {
   color: var(--accent);
   transform: scale(1.15);
+}
+
+/* Hamburger button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 10; /* keep above dropdown */
 }
 
 /* ---------------------------------------------------------
@@ -198,7 +211,6 @@ header {
 
 .links a {
   color: var(--accent);
-  text-decoration: none;
   font-weight: 500;
   margin: 0 0.3rem;
 }
@@ -242,93 +254,7 @@ li {
 }
 
 /* ---------------------------------------------------------
-   PUBLICATION CARDS
---------------------------------------------------------- */
-.pub-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.pub-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.2rem 1.4rem;
-  box-shadow: 0 2px 6px var(--shadow);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.pub-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 14px var(--shadow);
-  border-color: var(--accent);
-}
-
-.pub-card h4 {
-  margin-top: 0;
-  margin-bottom: 0.4rem;
-  color: var(--primary);
-  font-size: 1.05rem;
-}
-
-.pub-card p {
-  margin: 0.3rem 0;
-  color: var(--text);
-}
-
-.pub-card .tag {
-  margin-top: 0.6rem;
-  font-size: 0.85rem;
-  color: var(--accent);
-  font-weight: 500;
-}
-
-:root[data-theme='dark'] .pub-card {
-  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
-}
-
-/* ---------------------------------------------------------
-   FOOTER
---------------------------------------------------------- */
-footer {
-  text-align: center;
-  padding: 2rem 0;
-  font-size: 0.9rem;
-  color: var(--muted);
-  border-top: 1px solid var(--border);
-  margin-top: 4rem;
-}
-
-/* ---------------------------------------------------------
-   ANIMATIONS
---------------------------------------------------------- */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ---------------------------------------------------------
-   RESPONSIVE DESIGN
---------------------------------------------------------- */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-  }
-
-  .nav-links {
-    display: none;
-  }
-}
-/* ---------------------------------------------------------
-   VERTICAL PUBLICATION LIST (Clickable Cards)
+   PUBLICATION LIST / CARDS
 --------------------------------------------------------- */
 .pub-list {
   display: flex;
@@ -382,4 +308,70 @@ footer {
 
 :root[data-theme='dark'] .pub-card:hover {
   background: #181818;
+}
+
+/* ---------------------------------------------------------
+   FOOTER
+--------------------------------------------------------- */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  margin-top: 4rem;
+}
+
+/* ---------------------------------------------------------
+   ANIMATIONS
+--------------------------------------------------------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE DESIGN
+--------------------------------------------------------- */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px; /* below navbar */
+    right: 0;
+    left: 0;
+    background: var(--surface);
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .theme-toggle {
+    order: 2;
+  }
+
+  .menu-toggle {
+    order: 3;
+  }
 }
