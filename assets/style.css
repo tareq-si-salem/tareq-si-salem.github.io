@@ -189,8 +189,7 @@ li {
 
 /* Compact list utility */
 .compact-list {
-  margin-top: 0.2rem;
-  margin-bottom: 0.2rem;
+  margin: 0.2rem 0;
   padding-left: 1.2rem;
 }
 
@@ -234,5 +233,88 @@ footer {
 
   .nav-links {
     display: none;
+  }
+}
+
+/* ---------------------------------------------------------
+   PUBLICATION CARDS — FULL WIDTH (VERTICAL STACK)
+--------------------------------------------------------- */
+
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.pub-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  width: 100%;
+}
+
+.pub-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent);
+}
+
+.pub-card h4 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.pub-card p {
+  margin: 0.3rem 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.pub-card .tag {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.pub-card ul {
+  margin: 0.4rem 0;
+}
+
+.pub-card ul li {
+  margin: 0.2rem 0;
+}
+
+/* Section headings separators */
+.content h3 {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.3rem;
+  margin-top: 2.5rem;
+}
+
+/* Optional decorative dot before section titles */
+.content h3::before {
+  content: "• ";
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Wide layout adjustments */
+@media (min-width: 900px) {
+  .content {
+    max-width: 850px;
+  }
+}
+
+/* Dark mode card shadow */
+@media (prefers-color-scheme: dark) {
+  .pub-card {
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
   }
 }
