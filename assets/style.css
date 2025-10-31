@@ -1,0 +1,82 @@
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  color: #333;
+  line-height: 1.6;
+  background: #fafafa;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 1rem 2rem;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-links a.active, .nav-links a:hover {
+  color: #0077cc;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background: #eef4ff;
+}
+
+.profile-img {
+  width: 180px;
+  border-radius: 50%;
+  margin-right: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.intro h1 {
+  margin-bottom: 0.2rem;
+}
+
+.links a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.content {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #f5f5f5;
+  font-size: 0.9em;
+}
+
+.compact-list {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  padding-left: 1.2rem;
+}
+.compact-list li {
+  margin: 0.1rem 0;
+}
