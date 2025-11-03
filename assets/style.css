@@ -399,3 +399,18 @@ footer {
 .theme-toggle:hover {
   transform: scale(1.1);
 }
+.tag {
+  display: inline-block;
+  font-size: 0.70rem;
+  padding: 2px 6px;
+  margin: 2px 4px 0 0;
+  background: rgba(0,0,0,0.08);
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+/* dark mode friendly */
+[data-theme="dark"] .tag {
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.85);
+}
