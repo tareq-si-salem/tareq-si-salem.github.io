@@ -414,3 +414,54 @@ footer {
   background: rgba(255,255,255,0.12);
   color: rgba(255,255,255,0.85);
 }
+
+
+.pub-actions {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease,
+              color 0.2s ease,
+              border-color 0.2s ease,
+              transform 0.15s ease;
+}
+
+/* Primary: main paper link */
+.btn-primary {
+  background: var(--primary);
+  color: var(--surface);
+  border: 1px solid var(--primary);
+}
+
+.btn-primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Secondary: rebuttal / extras */
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* Dark mode refinements */
+:root[data-theme='dark'] .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
