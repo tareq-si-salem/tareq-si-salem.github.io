@@ -467,8 +467,8 @@ footer {
 }
   .supervision-subtitle {
     display: inline-block;
-    margin: 1rem 0 0.5rem;
-    padding: 0.25rem 0.65rem;
+    margin: 0.35rem 0 0.2rem;
+    padding: 0.2rem 0.6rem;
     border-radius: 999px;
     font-size: 0.9rem;
     font-weight: 600;
