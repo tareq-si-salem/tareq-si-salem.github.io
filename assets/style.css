@@ -465,3 +465,22 @@ footer {
 :root[data-theme='dark'] .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.06);
 }
+  .supervision-subtitle {
+    display: inline-block;
+    margin: 1rem 0 0.5rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .supervision-subtitle.current {
+    background-color: #1f4e79;
+    color: #ffffff;
+  }
+
+  .supervision-subtitle.past {
+    border: 1px solid #1f4e79;
+    color: #1f4e79;
+    background-color: transparent;
+  }
