@@ -484,3 +484,87 @@ footer {
     color: #1f4e79;
     background-color: transparent;
   }
+
+
+/* Append to assets/style.css — mini visitor map */
+
+.visitor-map {
+  position: relative;
+  max-width: 460px;
+  margin: 2.5rem auto 1rem;
+  opacity: 0.95;
+}
+
+.visitor-map-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.visitor-map-svg .country {
+  fill: #d6dae0;
+  stroke: rgba(255, 255, 255, 0.6);
+  stroke-width: 0.4;
+}
+
+.visitor-map-svg .country.has-visits {
+  fill: #3b6ea5;
+  cursor: default;
+}
+
+.visitor-map-svg .country.has-visits:hover {
+  fill: #2a527d;
+}
+
+.visitor-map-caption {
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.65;
+  margin: 0.5rem 0 0;
+}
+
+.visitor-map-tip {
+  position: absolute;
+  pointer-events: none;
+  transform: translateX(-50%);
+  background: rgba(20, 22, 26, 0.92);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 5px;
+  white-space: nowrap;
+  transition: opacity 0.12s ease;
+  z-index: 5;
+}
+
+/* Dark mode — matches the data-theme attribute set by your toggle */
+[data-theme="dark"] .visitor-map-svg .country {
+  fill: #2c3238;
+  stroke: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .visitor-map-svg .country.has-visits {
+  fill: #6fa8dc;
+}
+
+[data-theme="dark"] .visitor-map-svg .country.has-visits:hover {
+  fill: #8fbeea;
+}
+
+[data-theme="dark"] .visitor-map-tip {
+  background: rgba(240, 242, 245, 0.95);
+  color: #16181c;
+}
+
+@media (max-width: 600px) {
+  .visitor-map {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+}
+
+/* divider between the map and the copyright line */
+.visitor-map + p {
+  border-top: 0.5px solid rgba(128, 128, 128, 0.25);
+  padding-top: 0.75rem;
+}
