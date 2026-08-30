@@ -1,17 +1,15 @@
 # .github/workflows/update-stats.yml
 #
-# Pulls visitor-by-country counts from Umami Cloud once a day and commits
-# them to data/countries.json, which assets/minimap.js reads at page load.
+# Pulls visitor-by-country counts from Cloudflare Web Analytics once a day and
+# commits them to data/countries.json, which assets/minimap.js reads.
 #
 # Secrets — Settings -> Secrets and variables -> Actions -> Secrets tab:
-#   UMAMI_API_KEY     (Umami: profile -> Settings -> API keys -> Create key)
-#   UMAMI_WEBSITE_ID  (the UUID from your tracking snippet)
+#   CF_API_TOKEN   token with Account Analytics -> Read
+#   CF_ACCOUNT_ID  Cloudflare account ID
+#   CF_SITE_TAG    Web Analytics site tag for this site
 #
 # Toggle — same page, Variables tab (not Secrets):
 #   SHOW_VISITOR_MAP  off | auto | on     (default: auto)
-#       off   never show the map
-#       auto  show it once MAP_MIN_VISITS is reached
-#       on    always show it
 #   MAP_MIN_VISITS    number, default 250
 
 name: Update visitor stats
@@ -19,7 +17,7 @@ name: Update visitor stats
 on:
   schedule:
     - cron: "17 4 * * *" # 04:17 UTC daily
-  workflow_dispatch: # run by hand from the Actions tab after flipping the toggle
+  workflow_dispatch: # run by hand from the Actions tab
 
 permissions:
   contents: write
@@ -32,57 +30,82 @@ jobs:
 
       - name: Fetch country metrics
         env:
-          API_KEY: ${{ secrets.UMAMI_API_KEY }}
-          SITE_ID: ${{ secrets.UMAMI_WEBSITE_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_SITE_TAG: ${{ secrets.CF_SITE_TAG }}
           SHOW_MAP: ${{ vars.SHOW_VISITOR_MAP || 'auto' }}
           MIN_VISITS: ${{ vars.MAP_MIN_VISITS || '250' }}
         run: |
           set -euo pipefail
           DAYS=30
-          END=$(date +%s%3N)
-          START=$(( END - DAYS * 86400000 ))
+          END=$(date -u +%Y-%m-%dT%H:00:00Z)
+          START=$(date -u -d "$DAYS days ago" +%Y-%m-%dT%H:00:00Z)
 
           mkdir -p data
 
-          # Umami Cloud accepts the key as a bearer token; some deployments
-          # expect the x-umami-api-key header instead. Sending both is harmless.
+          jq -n \
+            --arg acct "$CF_ACCOUNT_ID" \
+            --arg site "$CF_SITE_TAG" \
+            --arg start "$START" \
+            --arg end "$END" \
+            '{
+              query: "query GetCountries($accountTag: string!, $filter: AccountRumPageloadEventsAdaptiveGroupsFilter_InputObject!) { viewer { accounts(filter: { accountTag: $accountTag }) { rumPageloadEventsAdaptiveGroups(filter: $filter, limit: 250, orderBy: [sum_visits_DESC]) { sum { visits } dimensions { countryName } } } } }",
+              variables: {
+                accountTag: $acct,
+                filter: {
+                  AND: [
+                    { datetime_geq: $start, datetime_leq: $end },
+                    { siteTag: $site },
+                    { bot: 0 }
+                  ]
+                }
+              }
+            }' > query.json
+
           curl -sS --fail-with-body \
-            -H "Accept: application/json" \
-            -H "Authorization: Bearer ${API_KEY}" \
-            -H "x-umami-api-key: ${API_KEY}" \
-            -G "https://api.umami.is/v1/websites/${SITE_ID}/metrics" \
-            --data-urlencode "type=country" \
-            --data-urlencode "startAt=${START}" \
-            --data-urlencode "endAt=${END}" \
+            -X POST "https://api.cloudflare.com/client/v4/graphql" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data @query.json \
             -o raw.json
 
-          # API returns [{"x":"FR","y":123}, ...]; reshape to {"FR":123,...}
-          # and decide visibility from the repo variables.
+          # GraphQL errors come back with HTTP 200, so check the body
+          if jq -e '.errors and (.errors | length > 0)' raw.json > /dev/null; then
+            echo "::error::GraphQL returned errors:"
+            jq -r '.errors' raw.json
+            exit 1
+          fi
+
           jq \
             --argjson days "$DAYS" \
             --arg mode "$SHOW_MAP" \
             --argjson min "$MIN_VISITS" \
-            '
-            (map(select(.x != null and .x != "")) | map({key: .x, value: .y}) | from_entries) as $c
-            | ($c | to_entries | map(.value) | add // 0) as $total
-            | {
-                updated: (now | todate),
-                days: $days,
-                total: $total,
-                mode: $mode,
-                threshold: $min,
-                enabled: (
-                  if   $mode == "on"  then true
-                  elif $mode == "off" then false
-                  else $total >= $min
-                  end
-                ),
-                countries: $c
-              }' raw.json > data/countries.json
+            '[ .data.viewer.accounts[0].rumPageloadEventsAdaptiveGroups[]
+               | select(.dimensions.countryName != null
+                        and .dimensions.countryName != ""
+                        and .dimensions.countryName != "T1")
+               | {key: .dimensions.countryName, value: (.sum.visits | floor)} ]
+             | from_entries as $c
+             | ($c | to_entries | map(.value) | add // 0) as $total
+             | {
+                 updated: (now | todate),
+                 days: $days,
+                 total: $total,
+                 mode: $mode,
+                 threshold: $min,
+                 enabled: (
+                   if   $mode == "on"  then true
+                   elif $mode == "off" then false
+                   else $total >= $min
+                   end
+                 ),
+                 countries: $c
+               }' raw.json > data/countries.json
 
-          rm -f raw.json
+          rm -f raw.json query.json
           jq -r '"visits: \(.total) | countries: \(.countries | length) | mode: \(.mode) | visible: \(.enabled)"' \
             data/countries.json
+          echo "top codes: $(jq -r '.countries | keys | .[0:8] | join(", ")' data/countries.json)"
 
       - name: Commit if changed
         run: |
