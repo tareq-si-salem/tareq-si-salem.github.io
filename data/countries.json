@@ -3,7 +3,7 @@
   "days": 30,
   "total": 20,
   "mode": "auto",
-  "threshold": 250,
+  "threshold": 1,
   "enabled": false,
   "countries": {
     "MA": 10,
