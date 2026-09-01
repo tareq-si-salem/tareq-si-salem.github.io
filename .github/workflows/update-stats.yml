@@ -33,7 +33,7 @@ jobs:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_SITE_TAG: ${{ secrets.CF_SITE_TAG }}
-          SHOW_MAP: ${{ vars.SHOW_VISITOR_MAP || 'auto' }}
+          SHOW_MAP: ${{ vars.SHOW_VISITOR_MAP || 'on' }}
           MIN_VISITS: ${{ vars.MAP_MIN_VISITS || '250' }}
         run: |
           set -euo pipefail
