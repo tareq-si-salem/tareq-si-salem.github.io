@@ -11,6 +11,21 @@
   var MAP_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
   var DATA_URL = "data/countries.json";
 
+  // Append ?mapdebug=1 to any page URL to force the map to render even when
+  // the workflow has it switched off, and to log every step to the console.
+  var DEBUG = /[?&]mapdebug=1/.test(location.search);
+
+  function log() {
+    if (!DEBUG) return;
+    var a = ["[minimap]"].concat(Array.prototype.slice.call(arguments));
+    console.log.apply(console, a);
+  }
+
+  function bail(why) {
+    // Always surfaced, debug or not — silent failure is what made this hard.
+    console.warn("[minimap] not rendering:", why);
+  }
+
   // ISO 3166-1 numeric -> alpha-2, to match world-atlas ids against Umami codes
   var NUM2A2 = {
     "4":"AF","8":"AL","10":"AQ","12":"DZ","16":"AS","20":"AD","24":"AO",
@@ -63,6 +78,16 @@
   function render(container, counts, meta, world) {
     var codes = Object.keys(counts);
     var max = Math.max.apply(null, codes.map(function (c) { return counts[c]; }).concat([1]));
+
+    // Cloudflare should return two-letter codes. If it returns full names
+    // instead, nothing matches the atlas and the map draws blank — say so.
+    var known = codes.filter(function (c) { return c.length === 2; }).length;
+    if (known === 0) {
+      console.warn(
+        "[minimap] none of these look like ISO codes:", codes.slice(0, 5).join(", "),
+        "— the map will render blank. Country codes need remapping."
+      );
+    }
 
     var W = 640, H = 300;
     var svg = d3.select(container)
@@ -127,24 +152,65 @@
 
   function init() {
     var container = document.getElementById("visitor-map");
-    if (!container || typeof d3 === "undefined" || typeof topojson === "undefined") return;
+    if (!container) {
+      bail("no #visitor-map element on this page");
+      return;
+    }
+    if (typeof d3 === "undefined") {
+      bail("d3 did not load (check the CDN script tag / an ad blocker)");
+      container.remove();
+      return;
+    }
+    if (typeof topojson === "undefined") {
+      bail("topojson did not load (check the CDN script tag)");
+      container.remove();
+      return;
+    }
+    log("starting, fetching", DATA_URL);
 
     Promise.all([fetch(DATA_URL), fetch(MAP_URL)])
       .then(function (rs) {
-        if (!rs[0].ok || !rs[1].ok) throw new Error("fetch failed");
+        if (!rs[0].ok) {
+          throw new Error(
+            "data/countries.json returned HTTP " + rs[0].status +
+            " — the workflow has not committed it yet"
+          );
+        }
+        if (!rs[1].ok) {
+          throw new Error("world map CDN returned HTTP " + rs[1].status);
+        }
         return Promise.all([rs[0].json(), rs[1].json()]);
       })
       .then(function (out) {
         var payload = out[0];
         var counts = payload.countries || {};
-        // Toggle written by the workflow from the SHOW_VISITOR_MAP repo variable.
-        if (payload.enabled === false) throw new Error("disabled");
-        if (!Object.keys(counts).length) throw new Error("no data");
+        log("payload:", payload);
+        log("total:", payload.total, "mode:", payload.mode,
+            "threshold:", payload.threshold, "enabled:", payload.enabled);
+        log("country codes:", Object.keys(counts).join(", ") || "(none)");
+
+        if (payload.enabled === false) {
+          if (!DEBUG) {
+            throw new Error(
+              "workflow set enabled:false (total " + payload.total +
+              " < threshold " + payload.threshold + ", mode " + payload.mode +
+              "). Lower MAP_MIN_VISITS or set SHOW_VISITOR_MAP=on, " +
+              "or add ?mapdebug=1 to preview it now."
+            );
+          }
+          log("enabled:false, but rendering anyway because ?mapdebug=1");
+        }
+
+        if (!Object.keys(counts).length) {
+          throw new Error("countries object is empty — no visits recorded yet");
+        }
+
         container.innerHTML = "";
         render(container, counts, payload, out[1]);
+        log("rendered", Object.keys(counts).length, "countries");
       })
-      .catch(function () {
-        // Stay quiet on failure — the map is decorative, not essential.
+      .catch(function (err) {
+        bail(err && err.message ? err.message : err);
         container.remove();
       });
   }
