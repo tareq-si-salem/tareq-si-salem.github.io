@@ -1,9 +1,9 @@
 {
-  "updated": "2026-09-01T15:21:37Z",
+  "updated": "2026-09-01T15:44:41Z",
   "days": 30,
   "total": 20,
   "mode": "auto",
-  "threshold": 1,
+  "threshold": 250,
   "enabled": false,
   "countries": {
     "MA": 10,
