@@ -33,10 +33,25 @@ jobs:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_SITE_TAG: ${{ secrets.CF_SITE_TAG }}
-          SHOW_MAP: ${{ vars.SHOW_VISITOR_MAP || 'on' }}
-          MIN_VISITS: ${{ vars.MAP_MIN_VISITS || '1' }}
+          SHOW_MAP: ${{ vars.SHOW_VISITOR_MAP || 'auto' }}
+          MIN_VISITS: ${{ vars.MAP_MIN_VISITS || '250' }}
         run: |
           set -euo pipefail
+
+          # Fail clearly if a secret is missing, rather than sending a blank
+          # request and getting an opaque HTTP 400 back from Cloudflare.
+          missing=""
+          [ -n "${CF_API_TOKEN}"  ] || missing="${missing} CF_API_TOKEN"
+          [ -n "${CF_ACCOUNT_ID}" ] || missing="${missing} CF_ACCOUNT_ID"
+          [ -n "${CF_SITE_TAG}"   ] || missing="${missing} CF_SITE_TAG"
+          if [ -n "${missing}" ]; then
+            echo "::error::Empty secret(s):${missing}"
+            echo "Add them as REPOSITORY secrets under Settings -> Secrets and"
+            echo "variables -> Actions -> Secrets tab. Environment secrets and"
+            echo "repository variables are not visible to this job."
+            exit 1
+          fi
+
           DAYS=30
           END=$(date -u +%Y-%m-%dT%H:00:00Z)
           START=$(date -u -d "$DAYS days ago" +%Y-%m-%dT%H:00:00Z)
@@ -111,10 +126,13 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- data/countries.json; then
+          # Stage first: git diff alone cannot see a new untracked file, so on
+          # the very first run it would report "no change" and never commit.
+          git add data/countries.json
+          if git diff --cached --quiet; then
             echo "No change."
           else
-            git add data/countries.json
             git commit -m "chore: refresh visitor stats"
             git push
+            echo "Committed data/countries.json"
           fi
