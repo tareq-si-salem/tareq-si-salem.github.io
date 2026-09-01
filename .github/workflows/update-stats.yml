@@ -34,7 +34,7 @@ jobs:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_SITE_TAG: ${{ secrets.CF_SITE_TAG }}
           SHOW_MAP: ${{ vars.SHOW_VISITOR_MAP || 'on' }}
-          MIN_VISITS: ${{ vars.MAP_MIN_VISITS || '250' }}
+          MIN_VISITS: ${{ vars.MAP_MIN_VISITS || '1' }}
         run: |
           set -euo pipefail
           DAYS=30
