@@ -4,7 +4,7 @@
   "total": 220,
   "mode": "auto",
   "threshold": 100,
-  "enabled": false,
+  "enabled": true,
   "countries": {
     "US": 90,
     "DE": 70,
