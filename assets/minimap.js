@@ -8,7 +8,7 @@
 (function () {
   "use strict";
 
-  var MAP_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
+  var MAP_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json";
   var DATA_URL = "data/countries.json";
 
   // ISO 3166-1 numeric -> alpha-2, to match world-atlas ids against Umami codes
