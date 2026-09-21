@@ -1,121 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-<title>Talks — Tareq Si Salem</title>
-  <link rel="stylesheet" href="assets/style.css">
-  <style>
-    .cv-container {
-      text-align: center;
-      margin-top: 2rem;
-    }
-    iframe {
-      width: 100%;
-      height: 800px;
-      border: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .cv-download {
-      display: inline-block;
-      margin: 1rem 0;
-      padding: 0.6rem 1.2rem;
-      background: #0077cc;
-      color: white;
-      text-decoration: none;
-      border-radius: 0.5rem;
-      font-weight: 500;
-    }
-    .cv-download:hover {
-      background: #005fa3;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <nav class="navbar">
-       <div class="nav-left">
-    <a href="index.html" class="nav-logo">Tareq Si Salem</a>
-    <!-- 🌙 Dark mode toggle (moved next to name) -->
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-      🌙
-    </button>
-  </div>
-
-       <!-- 🍔 Hamburger menu button -->
-  <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
-    ☰
-  </button>
-
-      <ul class="nav-links" id="nav-links">
-      <li><a href="index.html" class="active">About</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="talks.html">Talks</a></li>
-      <li><a href="teaching.html">Teaching</a></li>
-      <li><a href="software.html">Software</a></li>
-      <li><a href="cv.html">CV</a></li>
-    </ul>
-    </nav>
-  </header>
-
-  <main class="content">
-    <h1>Curriculum Vitae</h1>
-    <div class="cv-container">
-      <a class="cv-download" href="files/pdf/CV%20Si%20Salem.pdf" download>Download CV (PDF)</a>
-      <iframe title="Curriculum Vitae" src="files/pdf/CV%20Si%20Salem.pdf"></iframe>
-    </div>
-  </main>
-
-  <footer>
-    <div class="visitor-map" id="visitor-map"></div>
-    <p>© 2025 Tareq Si Salem. </p>
-  </footer>
- <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // === 🌙 Dark mode toggle ===
-    const toggle = document.getElementById("theme-toggle");
-    const storedTheme = localStorage.getItem("theme");
-
-    if (storedTheme) {
-      document.documentElement.setAttribute("data-theme", storedTheme);
-      toggle.textContent = storedTheme === "dark" ? "☀️" : "🌙";
-    }
-
-    toggle.addEventListener("click", () => {
-      const current = document.documentElement.getAttribute("data-theme");
-      const next = current === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", next);
-      localStorage.setItem("theme", next);
-      toggle.textContent = next === "dark" ? "☀️" : "🌙";
-    });
-
-    // === 🍔 Hamburger menu toggle ===
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.getElementById("nav-links");
-
-    if (menuToggle && navLinks) {
-      menuToggle.addEventListener("click", (e) => {
-        e.stopPropagation();
-        navLinks.classList.toggle("active");
-      });
-
-      // Optional: close menu when clicking outside
-      document.addEventListener("click", (e) => {
-        if (!navLinks.contains(e.target) && e.target !== menuToggle) {
-          navLinks.classList.remove("active");
-        }
-      });
-    }
-  });
-</script>
-
-
-  <!-- Cloudflare Web Analytics -->
-  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js"
-          data-cf-beacon='{"token": "8b1f8b49b50f4f959223014de40c4cde"}'></script>
-
-  <!-- Visitor mini map -->
-  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js" defer></script>
-  <script src="assets/minimap.js" defer></script>
-</body>
-</html>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curriculum vitae — Tareq Si Salem</title>
+<meta name="description" content="Academic background and research experience of Tareq Si Salem.">
+<meta name="theme-color" content="#111827">
+<meta property="og:title" content="Curriculum vitae — Tareq Si Salem"><meta property="og:description" content="Academic background and research experience of Tareq Si Salem."><meta property="og:type" content="website"><meta property="og:image" content="https://tareq-si-salem.github.io/images/profile.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css">
+<script src="assets/theme.js"></script><script src="assets/site.js" defer></script>
+</head><body class="page-cv">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><nav class="navbar" aria-label="Main navigation"><a class="nav-logo" href="index.html">Tareq Si Salem<span aria-hidden="true">.</span></a>
+<div class="nav-controls"><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode"><span aria-hidden="true">◐</span></button><button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button></div>
+<ul class="nav-links" id="nav-links"><li><a href="index.html">About</a></li><li><a href="publications.html">Publications</a></li><li><a href="talks.html">Talks</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="software.html">Software</a></li></ul></nav></header>
+<main id="main" class="content" tabindex="-1"><div class="page-heading"><p class="eyebrow">Academic background</p><h1>Curriculum vitae<span>.</span></h1><p>Research in machine learning and mathematical modeling.</p></div><section class="pub-card"><h2>Research experience</h2><p>Senior researcher at Huawei Paris Research Center.</p><p>Previously held research positions at Northeastern University with Stratis Ioannidis, and TU Delft with George Iosifidis.</p></section><section class="pub-card"><h2>Education</h2><p>Ph.D. in Computer Science, Université Côte d’Azur / Inria Sophia Antipolis, 2022. Supervisor: Giovanni Neglia.</p><a class="btn" href="files/pdf/PhD%20Thesis.pdf">Read the thesis ↗</a></section><section class="pub-card"><h2>Request a current CV</h2><p>For a complete and up-to-date curriculum vitae, please get in touch.</p><a class="btn" href="mailto:tareq.sisalem@gmail.com?subject=CV%20request">Email Tareq ↗</a></section></main>
+<footer class="site-footer"><div class="footer-top"><div><a class="footer-name" href="index.html">Tareq Si Salem</a><p>Machine learning · Mathematical modeling</p></div><a href="mailto:tareq.sisalem@gmail.com">Get in touch ↗</a></div><div class="footer-bottom"><span>© <span data-year>2026</span> Tareq Si Salem · Paris, France</span><div class="footer-links"><a href="cv.html">Academic background</a><a href="#main">Back to top ↑</a></div></div><div class="visitor-map" id="visitor-map"></div></footer>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"8b1f8b49b50f4f959223014de40c4cde"}'></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js" defer></script><script src="assets/minimap.js" defer></script>
+</body></html>

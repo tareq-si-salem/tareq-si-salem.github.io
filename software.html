@@ -1,160 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Software — Tareq Si Salem</title>
-  <link rel="stylesheet" href="assets/style.css">
-</head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Software — Tareq Si Salem</title>
+<meta name="description" content="Open-source models, research implementations, and datasets.">
+<meta name="theme-color" content="#111827">
+<meta property="og:title" content="Software — Tareq Si Salem"><meta property="og:description" content="Open-source models, research implementations, and datasets."><meta property="og:type" content="website"><meta property="og:image" content="https://tareq-si-salem.github.io/images/profile.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css">
+<script src="assets/theme.js"></script><script src="assets/site.js" defer></script>
+</head><body class="page-software">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><nav class="navbar" aria-label="Main navigation"><a class="nav-logo" href="index.html">Tareq Si Salem<span aria-hidden="true">.</span></a>
+<div class="nav-controls"><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode"><span aria-hidden="true">◐</span></button><button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button></div>
+<ul class="nav-links" id="nav-links"><li><a href="index.html">About</a></li><li><a href="publications.html">Publications</a></li><li><a href="talks.html">Talks</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="software.html" aria-current="page">Software</a></li></ul></nav></header>
+<main id="main" class="content" tabindex="-1"><div class="page-heading"><p class="eyebrow">Research in practice</p><h1>Software<span>.</span></h1><p>Open-source models, research implementations, and datasets.</p></div>
 
-<body>
-<header>
-  <nav class="navbar">
-    <div class="nav-left">
-    <a href="index.html" class="nav-logo">Tareq Si Salem</a>
-    <!-- 🌙 Dark mode toggle (moved next to name) -->
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-      🌙
-    </button>
-  </div>
+    <div class="pub-list software-grid"><article class="pub-card featured-software"><p class="eyebrow">Foundation model · 2026</p><h3>Tafsut</h3><p>A lightweight, ~105M-parameter univariate foundation model for zero-shot probabilistic time-series forecasting.</p><div class="pub-actions"><a class="btn" href="https://huggingface.co/Tafsut-FM/tafsut-univariate-base">Model ↗</a><a class="btn" href="https://github.com/Tafsut-FM/tafsut">Code ↗</a><a class="btn" href="https://huggingface.co/spaces/Tafsut-FM/tafsut-forecast-demo">Try the demo ↗</a></div></article>
 
-  <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
-    ☰
-  </button>
-   <ul class="nav-links" id="nav-links">
-      <li><a href="index.html" class="active">About</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="talks.html">Talks</a></li>
-      <li><a href="teaching.html">Teaching</a></li>
-      <li><a href="software.html">Software</a></li>
-    </ul>
-  </nav>
-</header>
-
-  <section class="content">
-    <h2>💻 Software — Tareq Si Salem</h2>
-
-    <div class="pub-list">
-
-      <!-- GoTSF -->
       <div class="pub-card">
-        <h4>GoTSF: Goal-Oriented Time-Series Forecasting</h4>
-        <p>Associated with the <a href="https://arxiv.org/abs/2501.00000" class="italic">NeurIPS 2025 workshop paper</a> on Time-Series Foundation Models.</p>
-        <div class="badges">
-          <a href="https://github.com/netop-team/gotsf/stargazers/">
-            <img src="https://img.shields.io/github/stars/netop-team/gotsf.svg?style=social&label=Star" alt="GitHub stars">
-          </a>
-          <a href="https://github.com/netop-team/gotsf/watchers/">
-            <img src="https://img.shields.io/github/watchers/netop-team/gotsf.svg?style=social&label=Watch" alt="GitHub watchers">
-          </a>
-        </div>
+        <h3>GoTSF: Goal-Oriented Time-Series Forecasting</h3>
+        <p>Research code for <a href="https://ojs.aaai.org/index.php/AAAI/article/view/39249/43210">Goal-Oriented Time-Series Forecasting: Foundation Framework Design</a>, AAAI 2026.</p>
+        <a class="btn" href="https://github.com/netop-team/gotsf">View repository ↗</a>
       </div>
 
-      <!-- Online Submodular Maximization -->
       <div class="pub-card">
-        <h4>Online Submodular Maximization via Online Convex Optimization</h4>
+        <h3>Online Submodular Maximization via Online Convex Optimization</h3>
         <p>This repository houses the code used for experiments in our
-          <a href="https://arxiv.org/pdf/2208.05898.pdf" class="italic">paper</a> accepted to AAAI 2024.</p>
-        <div class="badges">
-          <a href="https://github.com/neu-spiral/OSMviaOCO/stargazers/">
-            <img src="https://img.shields.io/github/stars/neu-spiral/OSMviaOCO.svg?style=social&label=Star" alt="GitHub stars">
-          </a>
-          <a href="https://github.com/neu-spiral/OSMviaOCO/watchers/">
-            <img src="https://img.shields.io/github/watchers/neu-spiral/OSMviaOCO.svg?style=social&label=Watch" alt="GitHub watchers">
-          </a>
-        </div>
+          <a href="https://arxiv.org/pdf/2309.04339" class="italic">paper</a> accepted to AAAI 2024.</p>
+        <a class="btn" href="https://github.com/neu-spiral/OSMviaOCO">View repository ↗</a>
       </div>
 
-      <!-- Long-term Fairness -->
       <div class="pub-card">
-        <h4>Enabling Long-term Fairness in Dynamic Resource Allocation</h4>
+        <h3>Enabling Long-term Fairness in Dynamic Resource Allocation</h3>
         <p>Simulator of experiments presented in the
           <a href="https://arxiv.org/pdf/2208.05898.pdf" class="italic">paper</a> accepted to ACM SIGMETRICS 2023.</p>
-        <div class="badges">
-          <a href="https://github.com/tareq-si-salem/Online-Multi-Agent-Cache-Networks/stargazers/">
-            <img src="https://img.shields.io/github/stars/tareq-si-salem/Online-Multi-Agent-Cache-Networks.svg?style=social&label=Star" alt="GitHub stars">
-          </a>
-          <a href="https://github.com/tareq-si-salem/Online-Multi-Agent-Cache-Networks/watchers/">
-            <img src="https://img.shields.io/github/watchers/tareq-si-salem/Online-Multi-Agent-Cache-Networks.svg?style=social&label=Watch" alt="GitHub watchers">
-          </a>
-        </div>
+        <a class="btn" href="https://github.com/tareq-si-salem/Online-Multi-Agent-Cache-Networks">View repository ↗</a>
       </div>
 
-      <!-- Online Caching -->
       <div class="pub-card">
-        <h4>Online Caching Networks with Adversarial Guarantees</h4>
+        <h3>Online Caching Networks with Adversarial Guarantees</h3>
         <p>Simulator of experiments presented in the
           <a href="https://ece.northeastern.edu/fac-ece/ioannidis/static/pdf/2022/C_Li_Online_Cache_Sigmetrics_2022.pdf" class="italic">paper</a> accepted to ACM SIGMETRICS 2022.</p>
-        <div class="badges">
-          <a href="https://github.com/neu-spiral/OnlineCache/stargazers/">
-            <img src="https://img.shields.io/github/stars/neu-spiral/OnlineCache.svg?style=social&label=Star" alt="GitHub stars">
-          </a>
-          <a href="https://github.com/neu-spiral/OnlineCache/watchers/">
-            <img src="https://img.shields.io/github/watchers/neu-spiral/OnlineCache.svg?style=social&label=Watch" alt="GitHub watchers">
-          </a>
-        </div>
+        <a class="btn" href="https://github.com/neu-spiral/OnlineCache">View repository ↗</a>
       </div>
 
-      <!-- Datasets -->
       <div class="pub-card">
-        <h4>Similarity Caching Datasets</h4>
+        <h3>Similarity Caching Datasets</h3>
         <p>Public traces to evaluate similarity caching policies.</p>
-        <a class="download-btn" href="https://sim-cache.gitlabpages.inria.fr/similarity-caching-traces/">⬇️ Download</a>
+        <a class="download-btn" href="https://sim-cache.gitlabpages.inria.fr/similarity-caching-traces/">Download</a>
       </div>
     </div>
-  </section>
-
-  <footer>
-    <div class="visitor-map" id="visitor-map"></div>
-    <p>© 2025 Tareq Si Salem.</p>
-  </footer>
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // === 🌙 Dark mode toggle ===
-    const toggle = document.getElementById("theme-toggle");
-    const storedTheme = localStorage.getItem("theme");
-
-    if (storedTheme) {
-      document.documentElement.setAttribute("data-theme", storedTheme);
-      toggle.textContent = storedTheme === "dark" ? "☀️" : "🌙";
-    }
-
-    toggle.addEventListener("click", () => {
-      const current = document.documentElement.getAttribute("data-theme");
-      const next = current === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", next);
-      localStorage.setItem("theme", next);
-      toggle.textContent = next === "dark" ? "☀️" : "🌙";
-    });
-
-    // === 🍔 Hamburger menu toggle ===
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.getElementById("nav-links");
-
-    if (menuToggle && navLinks) {
-      menuToggle.addEventListener("click", (e) => {
-        e.stopPropagation();
-        navLinks.classList.toggle("active");
-      });
-
-      // Optional: close menu when clicking outside
-      document.addEventListener("click", (e) => {
-        if (!navLinks.contains(e.target) && e.target !== menuToggle) {
-          navLinks.classList.remove("active");
-        }
-      });
-    }
-  });
-</script>
-
-
-  <!-- Cloudflare Web Analytics -->
-  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js"
-          data-cf-beacon='{"token": "8b1f8b49b50f4f959223014de40c4cde"}'></script>
-
-  <!-- Visitor mini map -->
-  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js" defer></script>
-  <script src="assets/minimap.js" defer></script>
-</body>
-</html>
+  </main>
+<footer class="site-footer"><div class="footer-top"><div><a class="footer-name" href="index.html">Tareq Si Salem</a><p>Machine learning · Mathematical modeling</p></div><a href="mailto:tareq.sisalem@gmail.com">Get in touch ↗</a></div><div class="footer-bottom"><span>© <span data-year>2026</span> Tareq Si Salem · Paris, France</span><div class="footer-links"><a href="cv.html">Academic background</a><a href="#main">Back to top ↑</a></div></div><div class="visitor-map" id="visitor-map"></div></footer>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"8b1f8b49b50f4f959223014de40c4cde"}'></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js" defer></script><script src="assets/minimap.js" defer></script>
+</body></html>

@@ -1,72 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teaching — Tareq Si Salem</title>
-  <link rel="stylesheet" href="assets/style.css">
-  <style>
-    .highlight {
-      color: #2f5d8a;
-      font-weight: 500;
-    }
-    .italic {
-      font-style: italic;
-      color: #555;
-    }
-    .content {
-      max-width: 850px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-      line-height: 1.6;
-    }
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    li {
-      margin-bottom: 1rem;
-    }
-    .hours {
-      background: #333;
-      color: #fff;
-      border-radius: 6px;
-      padding: 0.1rem 0.5rem;
-      font-size: 0.85rem;
-      margin-left: 0.3rem;
-    }
-  </style>
-</head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teaching — Tareq Si Salem</title>
+<meta name="description" content="Graduate teaching in optimization, data science, and business analytics.">
+<meta name="theme-color" content="#111827">
+<meta property="og:title" content="Teaching — Tareq Si Salem"><meta property="og:description" content="Graduate teaching in optimization, data science, and business analytics."><meta property="og:type" content="website"><meta property="og:image" content="https://tareq-si-salem.github.io/images/profile.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css">
+<script src="assets/theme.js"></script><script src="assets/site.js" defer></script>
+</head><body class="page-teaching">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><nav class="navbar" aria-label="Main navigation"><a class="nav-logo" href="index.html">Tareq Si Salem<span aria-hidden="true">.</span></a>
+<div class="nav-controls"><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode"><span aria-hidden="true">◐</span></button><button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button></div>
+<ul class="nav-links" id="nav-links"><li><a href="index.html">About</a></li><li><a href="publications.html">Publications</a></li><li><a href="talks.html">Talks</a></li><li><a href="teaching.html" aria-current="page">Teaching</a></li><li><a href="software.html">Software</a></li></ul></nav></header>
+<main id="main" class="content" tabindex="-1"><div class="page-heading"><p class="eyebrow">Knowledge exchange</p><h1>Teaching<span>.</span></h1><p>Graduate teaching in optimization, data science, and business analytics.</p></div>
 
-<body>
-<header>
-  <nav class="navbar">
-   <div class="nav-left">
-    <a href="index.html" class="nav-logo">Tareq Si Salem</a>
-    <!-- 🌙 Dark mode toggle (moved next to name) -->
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-      🌙
-    </button>
-  </div>
-
-  <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
-    ☰
-  </button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html" class="active">About</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="talks.html">Talks</a></li>
-      <li><a href="teaching.html">Teaching</a></li>
-      <li><a href="software.html">Software</a></li>
-    </ul>
-  </nav>
-</header>
-
-
-  <section class="content">
-    <h2>📘 Teaching</h2>
-
-    <ul>
+    <ul class="course-list">
       <li>
         <span class="highlight">Softwares for Luxury Business Analytics</span>
         <span class="hours">24h</span><br>
@@ -85,59 +34,8 @@
         <span class="italic">Ubiquitous Networking (Ubinet) Master, Sophia-Antipolis, France, Winter 2020.</span>
       </li>
     </ul>
-  </section>
-
-  <footer>
-    <div class="visitor-map" id="visitor-map"></div>
-    <p>© 2025 Tareq Si Salem. </p>
-  </footer>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // === 🌙 Dark mode toggle ===
-    const toggle = document.getElementById("theme-toggle");
-    const storedTheme = localStorage.getItem("theme");
-
-    if (storedTheme) {
-      document.documentElement.setAttribute("data-theme", storedTheme);
-      toggle.textContent = storedTheme === "dark" ? "☀️" : "🌙";
-    }
-
-    toggle.addEventListener("click", () => {
-      const current = document.documentElement.getAttribute("data-theme");
-      const next = current === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", next);
-      localStorage.setItem("theme", next);
-      toggle.textContent = next === "dark" ? "☀️" : "🌙";
-    });
-
-    // === 🍔 Hamburger menu toggle ===
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.getElementById("nav-links");
-
-    if (menuToggle && navLinks) {
-      menuToggle.addEventListener("click", (e) => {
-        e.stopPropagation();
-        navLinks.classList.toggle("active");
-      });
-
-      // Optional: close menu when clicking outside
-      document.addEventListener("click", (e) => {
-        if (!navLinks.contains(e.target) && e.target !== menuToggle) {
-          navLinks.classList.remove("active");
-        }
-      });
-    }
-  });
-</script>
-
-  
-  <!-- Cloudflare Web Analytics -->
-  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js"
-          data-cf-beacon='{"token": "8b1f8b49b50f4f959223014de40c4cde"}'></script>
-
-  <!-- Visitor mini map -->
-  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js" defer></script>
-  <script src="assets/minimap.js" defer></script>
-</body>
-</html>
+  </main>
+<footer class="site-footer"><div class="footer-top"><div><a class="footer-name" href="index.html">Tareq Si Salem</a><p>Machine learning · Mathematical modeling</p></div><a href="mailto:tareq.sisalem@gmail.com">Get in touch ↗</a></div><div class="footer-bottom"><span>© <span data-year>2026</span> Tareq Si Salem · Paris, France</span><div class="footer-links"><a href="cv.html">Academic background</a><a href="#main">Back to top ↑</a></div></div><div class="visitor-map" id="visitor-map"></div></footer>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"8b1f8b49b50f4f959223014de40c4cde"}'></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js" defer></script><script src="assets/minimap.js" defer></script>
+</body></html>
