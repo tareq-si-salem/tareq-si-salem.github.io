@@ -896,7 +896,7 @@ a.pub-card:hover h3 {
 .institution-logo img { display:block; width:auto; height:auto; max-width:100%; max-height:100%; object-fit:contain; }
 .thesis-committee { display:grid; grid-template-columns:80px minmax(0,1fr); gap:7px 12px; margin-top:14px; padding-top:12px; border-top:1px solid var(--border); }
 .thesis-committee h4 { padding-top:4px; font-size:11px; color:var(--accent); margin:0; line-height:1.7; letter-spacing:0; }
-.thesis-committee ul { display:flex; flex-wrap:wrap; gap:4px 16px; padding:0; margin:0; list-style:none; }
+.thesis-committee ul { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px 16px; padding:0; margin:0; list-style:none; }
 .thesis-committee li { display:flex; align-items:center; gap:8px; font-size:12px; line-height:1.6; min-width:0; }
 .thesis-committee .institution-logo { flex-shrink:0; width:86px; height:28px; padding:4px 6px; }
 .committee-name { font-weight:500; }
@@ -904,6 +904,9 @@ a.pub-card:hover h3 {
 .committee-institution::before { content:' · '; }
 .thesis-card .pub-actions { gap:8px; }
 .thesis-card .btn { margin-top:10px; padding:4px 10px; }
+@media(max-width:760px) {
+  .thesis-committee ul { grid-template-columns:1fr; }
+}
 @media(max-width:540px) {
   .thesis-committee { grid-template-columns:1fr; gap:4px; }
   .thesis-committee h4:not(:first-child) { margin-top:5px; }
