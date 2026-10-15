@@ -1,16 +1,16 @@
 {
-  "updated": "2026-10-14T09:29:27Z",
+  "updated": "2026-10-15T09:07:51Z",
   "days": 30,
-  "total": 490,
+  "total": 510,
   "mode": "auto",
   "threshold": 100,
   "enabled": true,
   "countries": {
-    "DE": 230,
+    "DE": 240,
     "FR": 100,
-    "US": 60,
-    "CN": 40,
-    "SG": 30,
+    "US": 70,
+    "CN": 50,
+    "SG": 20,
     "GB": 10,
     "RU": 10,
     "DZ": 10
