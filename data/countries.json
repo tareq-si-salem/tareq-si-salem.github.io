@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-08T11:15:07Z",
+  "updated": "2026-11-09T12:49:11Z",
   "days": 30,
-  "total": 270,
+  "total": 260,
   "mode": "auto",
   "threshold": 100,
   "enabled": true,
@@ -12,7 +12,6 @@
     "US": 20,
     "GB": 10,
     "QA": 10,
-    "NL": 10,
-    "SG": 10
+    "NL": 10
   }
 }
