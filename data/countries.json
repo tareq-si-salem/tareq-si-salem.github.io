@@ -1,12 +1,12 @@
 {
-  "updated": "2026-11-12T12:40:00Z",
+  "updated": "2026-11-13T12:09:57Z",
   "days": 30,
-  "total": 190,
+  "total": 200,
   "mode": "auto",
   "threshold": 100,
   "enabled": true,
   "countries": {
-    "DE": 80,
+    "DE": 90,
     "CN": 50,
     "US": 20,
     "FR": 20,
